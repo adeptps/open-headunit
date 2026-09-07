@@ -79,8 +79,8 @@ class ProjectionActivityRequest: Intent(action) {
  * (from any nav app: Google Maps, Yandex Maps, etc.). Do not setPackage() — implicit broadcast
  * so any app can receive by registering for [action] with RECEIVER_EXPORTED.
  *
- * Other apps: registerReceiver(receiver, IntentFilter(NavigationUpdateIntent.action), RECEIVER_EXPORTED)
- * No special permission required.
+ * Other apps must request [NavigationUpdateIntent.BROADCAST_PERMISSION] and register a receiver for
+ * [NavigationUpdateIntent.action]. The permission is signature-level.
  *
  * @param nextEventType **Deprecated (legacy):** wire values for AA `NextTurnDetail.NextEvent` (see [EXTRA_NEXT_EVENT_TYPE]).
  *   Mapped from instrument-cluster `NavigationManeuver` when the old message is absent; scheduled for removal — migrate
@@ -102,7 +102,9 @@ class NavigationUpdateIntent(
     turnAngle: Int? = null,
     totalDistanceMeters: Int? = null,
     totalTimeSeconds: Long? = null,
-    estimatedArrival: String? = null
+    estimatedArrival: String? = null,
+    maneuverType: Int? = null,
+    navigationEventType: Int? = null
 ) : Intent(action) {
     init {
         putExtra(EXTRA_DISTANCE_METERS, distanceMeters?.takeIf { it >= 0 } ?: -1)
@@ -116,6 +118,8 @@ class NavigationUpdateIntent(
         putExtra(EXTRA_TOTAL_DISTANCE_METERS, totalDistanceMeters?.takeIf { it >= 0 } ?: -1)
         putExtra(EXTRA_TOTAL_TIME_SECONDS, totalTimeSeconds?.takeIf { it >= 0 } ?: -1L)
         putExtra(EXTRA_ESTIMATED_ARRIVAL, estimatedArrival?.ifBlank { null } ?: "")
+        putExtra(EXTRA_MANEUVER_TYPE, maneuverType?.takeIf { it >= 0 } ?: -1)
+        putExtra(EXTRA_NAVIGATION_EVENT_TYPE, navigationEventType?.takeIf { it >= 0 } ?: -1)
     }
 
     companion object {
@@ -169,6 +173,12 @@ class NavigationUpdateIntent(
          * Estimated time at arrival as provided by the nav app (`estimated_time_at_arrival` string), or empty.
          */
         const val EXTRA_ESTIMATED_ARRIVAL = "estimated_arrival"
+
+        /** Instrument-cluster maneuver wire value, or -1 when no maneuver was supplied. */
+        const val EXTRA_MANEUVER_TYPE = "maneuver_type"
+
+        /** Source NAV message category used to build this accumulated update, or -1. */
+        const val EXTRA_NAVIGATION_EVENT_TYPE = "navigation_event_type"
 
         /**
          * Signature-level permission required to receive or send [NavigationUpdateIntent] broadcasts.

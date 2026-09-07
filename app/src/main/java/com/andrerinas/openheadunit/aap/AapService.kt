@@ -1019,6 +1019,7 @@ class AapService : Service() {
                         }
                     }
                     is CommManager.ConnectionState.Disconnected -> {
+                        AapMviteNavigationEmitter.endSession(this@AapService)
                         if (hasEverConnected) onDisconnected(state)
                     }
                     else -> {}
@@ -2147,6 +2148,7 @@ class AapService : Service() {
     override fun onDestroy() {
         AppLog.i("AapService destroying... (wakeLock held=${bootWakeLock?.isHeld == true})")
         isDestroying = true
+        AapMviteNavigationEmitter.endSession(this)
         // Nothing else clears it here, and the manager outlives the service instance.
         selfLauncherManager.isActive = false
         autoResumePlaybackJob?.cancel()

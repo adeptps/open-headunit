@@ -103,9 +103,9 @@ message NavigationState
 message NavigationStep
 {
     optional NavigationManeuver maneuver = 1;
-    optional NavigationRoad road = 2;
+    optional NavigationText instruction = 2;
     repeated NavigationLane lanes = 3;
-    optional NavigationCue cue = 4;
+    optional NavigationRoadInfo road_info = 4;
 }
 
 message NavigationManeuver
@@ -157,15 +157,28 @@ message NavigationManeuver
         DESTINATION_STRAIGHT = 40;
         DESTINATION_LEFT = 41;
         DESTINATION_RIGHT = 42;
+        ROUNDABOUT_ENTER_CW = 43;
+        ROUNDABOUT_EXIT_CW = 44;
+        ROUNDABOUT_ENTER_CCW = 45;
+        ROUNDABOUT_EXIT_CCW = 46;
+        FERRY_BOAT_LEFT = 47;
+        FERRY_BOAT_RIGHT = 48;
+        FERRY_TRAIN_LEFT = 49;
+        FERRY_TRAIN_RIGHT = 50;
     }
 
     optional int32 roundabout_exit_number = 2;
     optional int32 roundabout_exit_angle = 3;
 }
 
-message NavigationCue
+message NavigationText
 {
-    repeated string alternate_text = 1;
+    optional string text = 1;
+}
+
+message NavigationRoadInfo
+{
+    repeated string road_names = 1;
 }
 
 message NavigationLane

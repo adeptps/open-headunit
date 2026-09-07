@@ -2067,7 +2067,7 @@ public final class NavigationStatus {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2085,7 +2085,7 @@ public final class NavigationStatus {
         getRoadBytes() {
       java.lang.Object ref = road_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         road_ = b;
@@ -2720,7 +2720,7 @@ public final class NavigationStatus {
           getRoadBytes() {
         java.lang.Object ref = road_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           road_ = b;
@@ -4001,7 +4001,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
      */
-    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep> 
+    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep>
         getStepsList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
@@ -4014,7 +4014,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
      */
-    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder> 
+    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder>
         getStepsOrBuilderList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
@@ -4025,7 +4025,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
      */
-    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination> 
+    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination>
         getDestinationsList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
@@ -4038,7 +4038,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
      */
-    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder> 
+    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder>
         getDestinationsOrBuilderList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
@@ -4097,7 +4097,7 @@ public final class NavigationStatus {
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder> 
+    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder>
         getStepsOrBuilderList() {
       return steps_;
     }
@@ -4138,7 +4138,7 @@ public final class NavigationStatus {
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder> 
+    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder>
         getDestinationsOrBuilderList() {
       return destinations_;
     }
@@ -4504,7 +4504,7 @@ public final class NavigationStatus {
               stepsBuilder_ = null;
               steps_ = other.steps_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              stepsBuilder_ = 
+              stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStepsFieldBuilder() : null;
             } else {
@@ -4530,7 +4530,7 @@ public final class NavigationStatus {
               destinationsBuilder_ = null;
               destinations_ = other.destinations_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              destinationsBuilder_ = 
+              destinationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDestinationsFieldBuilder() : null;
             } else {
@@ -4802,7 +4802,7 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
        */
-      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder> 
+      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder>
            getStepsOrBuilderList() {
         if (stepsBuilder_ != null) {
           return stepsBuilder_.getMessageOrBuilderList();
@@ -4828,12 +4828,12 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep steps = 1;</code>
        */
-      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep.Builder> 
+      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep.Builder>
            getStepsBuilderList() {
         return getStepsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStep.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepOrBuilder>
           getStepsFieldBuilder() {
         if (stepsBuilder_ == null) {
           stepsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -5042,7 +5042,7 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
        */
-      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder> 
+      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder>
            getDestinationsOrBuilderList() {
         if (destinationsBuilder_ != null) {
           return destinationsBuilder_.getMessageOrBuilderList();
@@ -5068,12 +5068,12 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestination destinations = 2;</code>
        */
-      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination.Builder> 
+      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination.Builder>
            getDestinationsBuilderList() {
         return getDestinationsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestination.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationOrBuilder>
           getDestinationsFieldBuilder() {
         if (destinationsBuilder_ == null) {
           destinationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -5170,24 +5170,24 @@ public final class NavigationStatus {
     com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuverOrBuilder getManeuverOrBuilder();
 
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
-     * @return Whether the road field is set.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
+     * @return Whether the instruction field is set.
      */
-    boolean hasRoad();
+    boolean hasInstruction();
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
-     * @return The road.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
+     * @return The instruction.
      */
-    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad getRoad();
+    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText getInstruction();
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
      */
-    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder getRoadOrBuilder();
+    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder getInstructionOrBuilder();
 
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
      */
-    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane> 
+    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane>
         getLanesList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
@@ -5200,7 +5200,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
      */
-    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder> 
+    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder>
         getLanesOrBuilderList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
@@ -5209,19 +5209,19 @@ public final class NavigationStatus {
         int index);
 
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
-     * @return Whether the cue field is set.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
+     * @return Whether the roadInfo field is set.
      */
-    boolean hasCue();
+    boolean hasRoadInfo();
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
-     * @return The cue.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
+     * @return The roadInfo.
      */
-    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue getCue();
+    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo getRoadInfo();
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
      */
-    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder getCueOrBuilder();
+    com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder getRoadInfoOrBuilder();
   }
   /**
    * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationStep}
@@ -5286,30 +5286,30 @@ public final class NavigationStatus {
       return maneuver_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuver.getDefaultInstance() : maneuver_;
     }
 
-    public static final int ROAD_FIELD_NUMBER = 2;
-    private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad road_;
+    public static final int INSTRUCTION_FIELD_NUMBER = 2;
+    private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText instruction_;
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
-     * @return Whether the road field is set.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
+     * @return Whether the instruction field is set.
      */
     @java.lang.Override
-    public boolean hasRoad() {
+    public boolean hasInstruction() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
-     * @return The road.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
+     * @return The instruction.
      */
     @java.lang.Override
-    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad getRoad() {
-      return road_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.getDefaultInstance() : road_;
+    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText getInstruction() {
+      return instruction_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance() : instruction_;
     }
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
      */
     @java.lang.Override
-    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder getRoadOrBuilder() {
-      return road_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.getDefaultInstance() : road_;
+    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder getInstructionOrBuilder() {
+      return instruction_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance() : instruction_;
     }
 
     public static final int LANES_FIELD_NUMBER = 3;
@@ -5326,7 +5326,7 @@ public final class NavigationStatus {
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder> 
+    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder>
         getLanesOrBuilderList() {
       return lanes_;
     }
@@ -5353,30 +5353,30 @@ public final class NavigationStatus {
       return lanes_.get(index);
     }
 
-    public static final int CUE_FIELD_NUMBER = 4;
-    private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue cue_;
+    public static final int ROAD_INFO_FIELD_NUMBER = 4;
+    private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo roadInfo_;
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
-     * @return Whether the cue field is set.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
+     * @return Whether the roadInfo field is set.
      */
     @java.lang.Override
-    public boolean hasCue() {
+    public boolean hasRoadInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
-     * @return The cue.
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
+     * @return The roadInfo.
      */
     @java.lang.Override
-    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue getCue() {
-      return cue_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance() : cue_;
+    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo getRoadInfo() {
+      return roadInfo_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance() : roadInfo_;
     }
     /**
-     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+     * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
      */
     @java.lang.Override
-    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder getCueOrBuilder() {
-      return cue_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance() : cue_;
+    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder getRoadInfoOrBuilder() {
+      return roadInfo_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance() : roadInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5397,13 +5397,13 @@ public final class NavigationStatus {
         output.writeMessage(1, getManeuver());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getRoad());
+        output.writeMessage(2, getInstruction());
       }
       for (int i = 0; i < lanes_.size(); i++) {
         output.writeMessage(3, lanes_.get(i));
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(4, getCue());
+        output.writeMessage(4, getRoadInfo());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5420,7 +5420,7 @@ public final class NavigationStatus {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getRoad());
+          .computeMessageSize(2, getInstruction());
       }
       for (int i = 0; i < lanes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -5428,7 +5428,7 @@ public final class NavigationStatus {
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getCue());
+          .computeMessageSize(4, getRoadInfo());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5450,17 +5450,17 @@ public final class NavigationStatus {
         if (!getManeuver()
             .equals(other.getManeuver())) return false;
       }
-      if (hasRoad() != other.hasRoad()) return false;
-      if (hasRoad()) {
-        if (!getRoad()
-            .equals(other.getRoad())) return false;
+      if (hasInstruction() != other.hasInstruction()) return false;
+      if (hasInstruction()) {
+        if (!getInstruction()
+            .equals(other.getInstruction())) return false;
       }
       if (!getLanesList()
           .equals(other.getLanesList())) return false;
-      if (hasCue() != other.hasCue()) return false;
-      if (hasCue()) {
-        if (!getCue()
-            .equals(other.getCue())) return false;
+      if (hasRoadInfo() != other.hasRoadInfo()) return false;
+      if (hasRoadInfo()) {
+        if (!getRoadInfo()
+            .equals(other.getRoadInfo())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -5477,17 +5477,17 @@ public final class NavigationStatus {
         hash = (37 * hash) + MANEUVER_FIELD_NUMBER;
         hash = (53 * hash) + getManeuver().hashCode();
       }
-      if (hasRoad()) {
-        hash = (37 * hash) + ROAD_FIELD_NUMBER;
-        hash = (53 * hash) + getRoad().hashCode();
+      if (hasInstruction()) {
+        hash = (37 * hash) + INSTRUCTION_FIELD_NUMBER;
+        hash = (53 * hash) + getInstruction().hashCode();
       }
       if (getLanesCount() > 0) {
         hash = (37 * hash) + LANES_FIELD_NUMBER;
         hash = (53 * hash) + getLanesList().hashCode();
       }
-      if (hasCue()) {
-        hash = (37 * hash) + CUE_FIELD_NUMBER;
-        hash = (53 * hash) + getCue().hashCode();
+      if (hasRoadInfo()) {
+        hash = (37 * hash) + ROAD_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getRoadInfo().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -5620,9 +5620,9 @@ public final class NavigationStatus {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getManeuverFieldBuilder();
-          getRoadFieldBuilder();
+          getInstructionFieldBuilder();
           getLanesFieldBuilder();
-          getCueFieldBuilder();
+          getRoadInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5634,10 +5634,10 @@ public final class NavigationStatus {
           maneuverBuilder_.dispose();
           maneuverBuilder_ = null;
         }
-        road_ = null;
-        if (roadBuilder_ != null) {
-          roadBuilder_.dispose();
-          roadBuilder_ = null;
+        instruction_ = null;
+        if (instructionBuilder_ != null) {
+          instructionBuilder_.dispose();
+          instructionBuilder_ = null;
         }
         if (lanesBuilder_ == null) {
           lanes_ = java.util.Collections.emptyList();
@@ -5646,10 +5646,10 @@ public final class NavigationStatus {
           lanesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
-        cue_ = null;
-        if (cueBuilder_ != null) {
-          cueBuilder_.dispose();
-          cueBuilder_ = null;
+        roadInfo_ = null;
+        if (roadInfoBuilder_ != null) {
+          roadInfoBuilder_.dispose();
+          roadInfoBuilder_ = null;
         }
         return this;
       }
@@ -5705,15 +5705,15 @@ public final class NavigationStatus {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.road_ = roadBuilder_ == null
-              ? road_
-              : roadBuilder_.build();
+          result.instruction_ = instructionBuilder_ == null
+              ? instruction_
+              : instructionBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.cue_ = cueBuilder_ == null
-              ? cue_
-              : cueBuilder_.build();
+          result.roadInfo_ = roadInfoBuilder_ == null
+              ? roadInfo_
+              : roadInfoBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
@@ -5766,8 +5766,8 @@ public final class NavigationStatus {
         if (other.hasManeuver()) {
           mergeManeuver(other.getManeuver());
         }
-        if (other.hasRoad()) {
-          mergeRoad(other.getRoad());
+        if (other.hasInstruction()) {
+          mergeInstruction(other.getInstruction());
         }
         if (lanesBuilder_ == null) {
           if (!other.lanes_.isEmpty()) {
@@ -5787,7 +5787,7 @@ public final class NavigationStatus {
               lanesBuilder_ = null;
               lanes_ = other.lanes_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              lanesBuilder_ = 
+              lanesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLanesFieldBuilder() : null;
             } else {
@@ -5795,8 +5795,8 @@ public final class NavigationStatus {
             }
           }
         }
-        if (other.hasCue()) {
-          mergeCue(other.getCue());
+        if (other.hasRoadInfo()) {
+          mergeRoadInfo(other.getRoadInfo());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -5833,7 +5833,7 @@ public final class NavigationStatus {
               } // case 10
               case 18: {
                 input.readMessage(
-                    getRoadFieldBuilder().getBuilder(),
+                    getInstructionFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000002;
                 break;
@@ -5853,7 +5853,7 @@ public final class NavigationStatus {
               } // case 26
               case 34: {
                 input.readMessage(
-                    getCueFieldBuilder().getBuilder(),
+                    getRoadInfoFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000008;
                 break;
@@ -5983,7 +5983,7 @@ public final class NavigationStatus {
        * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationManeuver maneuver = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuver, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuver.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuverOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuver, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuver.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationManeuverOrBuilder>
           getManeuverFieldBuilder() {
         if (maneuverBuilder_ == null) {
           maneuverBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -5996,125 +5996,125 @@ public final class NavigationStatus {
         return maneuverBuilder_;
       }
 
-      private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad road_;
+      private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText instruction_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder> roadBuilder_;
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder> instructionBuilder_;
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
-       * @return Whether the road field is set.
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
+       * @return Whether the instruction field is set.
        */
-      public boolean hasRoad() {
+      public boolean hasInstruction() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
-       * @return The road.
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
+       * @return The instruction.
        */
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad getRoad() {
-        if (roadBuilder_ == null) {
-          return road_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.getDefaultInstance() : road_;
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText getInstruction() {
+        if (instructionBuilder_ == null) {
+          return instruction_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance() : instruction_;
         } else {
-          return roadBuilder_.getMessage();
+          return instructionBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
-      public Builder setRoad(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad value) {
-        if (roadBuilder_ == null) {
+      public Builder setInstruction(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText value) {
+        if (instructionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          road_ = value;
+          instruction_ = value;
         } else {
-          roadBuilder_.setMessage(value);
+          instructionBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
-      public Builder setRoad(
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder builderForValue) {
-        if (roadBuilder_ == null) {
-          road_ = builderForValue.build();
+      public Builder setInstruction(
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder builderForValue) {
+        if (instructionBuilder_ == null) {
+          instruction_ = builderForValue.build();
         } else {
-          roadBuilder_.setMessage(builderForValue.build());
+          instructionBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
-      public Builder mergeRoad(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad value) {
-        if (roadBuilder_ == null) {
+      public Builder mergeInstruction(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText value) {
+        if (instructionBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-            road_ != null &&
-            road_ != com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.getDefaultInstance()) {
-            getRoadBuilder().mergeFrom(value);
+            instruction_ != null &&
+            instruction_ != com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance()) {
+            getInstructionBuilder().mergeFrom(value);
           } else {
-            road_ = value;
+            instruction_ = value;
           }
         } else {
-          roadBuilder_.mergeFrom(value);
+          instructionBuilder_.mergeFrom(value);
         }
-        if (road_ != null) {
+        if (instruction_ != null) {
           bitField0_ |= 0x00000002;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
-      public Builder clearRoad() {
+      public Builder clearInstruction() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        road_ = null;
-        if (roadBuilder_ != null) {
-          roadBuilder_.dispose();
-          roadBuilder_ = null;
+        instruction_ = null;
+        if (instructionBuilder_ != null) {
+          instructionBuilder_.dispose();
+          instructionBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder getRoadBuilder() {
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder getInstructionBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return getRoadFieldBuilder().getBuilder();
+        return getInstructionFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder getRoadOrBuilder() {
-        if (roadBuilder_ != null) {
-          return roadBuilder_.getMessageOrBuilder();
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder getInstructionOrBuilder() {
+        if (instructionBuilder_ != null) {
+          return instructionBuilder_.getMessageOrBuilder();
         } else {
-          return road_ == null ?
-              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.getDefaultInstance() : road_;
+          return instruction_ == null ?
+              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance() : instruction_;
         }
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad road = 2;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationText instruction = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder> 
-          getRoadFieldBuilder() {
-        if (roadBuilder_ == null) {
-          roadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder>(
-                  getRoad(),
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder>
+          getInstructionFieldBuilder() {
+        if (instructionBuilder_ == null) {
+          instructionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder>(
+                  getInstruction(),
                   getParentForChildren(),
                   isClean());
-          road_ = null;
+          instruction_ = null;
         }
-        return roadBuilder_;
+        return instructionBuilder_;
       }
 
       private java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane> lanes_ =
@@ -6312,7 +6312,7 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
        */
-      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder> 
+      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder>
            getLanesOrBuilderList() {
         if (lanesBuilder_ != null) {
           return lanesBuilder_.getMessageOrBuilderList();
@@ -6338,12 +6338,12 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane lanes = 3;</code>
        */
-      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.Builder> 
+      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.Builder>
            getLanesBuilderList() {
         return getLanesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLaneOrBuilder>
           getLanesFieldBuilder() {
         if (lanesBuilder_ == null) {
           lanesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -6357,125 +6357,125 @@ public final class NavigationStatus {
         return lanesBuilder_;
       }
 
-      private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue cue_;
+      private com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo roadInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder> cueBuilder_;
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder> roadInfoBuilder_;
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
-       * @return Whether the cue field is set.
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
+       * @return Whether the roadInfo field is set.
        */
-      public boolean hasCue() {
+      public boolean hasRoadInfo() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
-       * @return The cue.
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
+       * @return The roadInfo.
        */
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue getCue() {
-        if (cueBuilder_ == null) {
-          return cue_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance() : cue_;
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo getRoadInfo() {
+        if (roadInfoBuilder_ == null) {
+          return roadInfo_ == null ? com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance() : roadInfo_;
         } else {
-          return cueBuilder_.getMessage();
+          return roadInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
-      public Builder setCue(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue value) {
-        if (cueBuilder_ == null) {
+      public Builder setRoadInfo(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo value) {
+        if (roadInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          cue_ = value;
+          roadInfo_ = value;
         } else {
-          cueBuilder_.setMessage(value);
+          roadInfoBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
-      public Builder setCue(
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder builderForValue) {
-        if (cueBuilder_ == null) {
-          cue_ = builderForValue.build();
+      public Builder setRoadInfo(
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder builderForValue) {
+        if (roadInfoBuilder_ == null) {
+          roadInfo_ = builderForValue.build();
         } else {
-          cueBuilder_.setMessage(builderForValue.build());
+          roadInfoBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
-      public Builder mergeCue(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue value) {
-        if (cueBuilder_ == null) {
+      public Builder mergeRoadInfo(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo value) {
+        if (roadInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-            cue_ != null &&
-            cue_ != com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance()) {
-            getCueBuilder().mergeFrom(value);
+            roadInfo_ != null &&
+            roadInfo_ != com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance()) {
+            getRoadInfoBuilder().mergeFrom(value);
           } else {
-            cue_ = value;
+            roadInfo_ = value;
           }
         } else {
-          cueBuilder_.mergeFrom(value);
+          roadInfoBuilder_.mergeFrom(value);
         }
-        if (cue_ != null) {
+        if (roadInfo_ != null) {
           bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
-      public Builder clearCue() {
+      public Builder clearRoadInfo() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        cue_ = null;
-        if (cueBuilder_ != null) {
-          cueBuilder_.dispose();
-          cueBuilder_ = null;
+        roadInfo_ = null;
+        if (roadInfoBuilder_ != null) {
+          roadInfoBuilder_.dispose();
+          roadInfoBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder getCueBuilder() {
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder getRoadInfoBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
-        return getCueFieldBuilder().getBuilder();
+        return getRoadInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder getCueOrBuilder() {
-        if (cueBuilder_ != null) {
-          return cueBuilder_.getMessageOrBuilder();
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder getRoadInfoOrBuilder() {
+        if (roadInfoBuilder_ != null) {
+          return roadInfoBuilder_.getMessageOrBuilder();
         } else {
-          return cue_ == null ?
-              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance() : cue_;
+          return roadInfo_ == null ?
+              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance() : roadInfo_;
         }
       }
       /**
-       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue cue = 4;</code>
+       * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo road_info = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder> 
-          getCueFieldBuilder() {
-        if (cueBuilder_ == null) {
-          cueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder>(
-                  getCue(),
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder>
+          getRoadInfoFieldBuilder() {
+        if (roadInfoBuilder_ == null) {
+          roadInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder>(
+                  getRoadInfo(),
                   getParentForChildren(),
                   isClean());
-          cue_ = null;
+          roadInfo_ = null;
         }
-        return cueBuilder_;
+        return roadInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6791,6 +6791,38 @@ public final class NavigationStatus {
        * <code>DESTINATION_RIGHT = 42;</code>
        */
       DESTINATION_RIGHT(42),
+      /**
+       * <code>ROUNDABOUT_ENTER_CW = 43;</code>
+       */
+      ROUNDABOUT_ENTER_CW(43),
+      /**
+       * <code>ROUNDABOUT_EXIT_CW = 44;</code>
+       */
+      ROUNDABOUT_EXIT_CW(44),
+      /**
+       * <code>ROUNDABOUT_ENTER_CCW = 45;</code>
+       */
+      ROUNDABOUT_ENTER_CCW(45),
+      /**
+       * <code>ROUNDABOUT_EXIT_CCW = 46;</code>
+       */
+      ROUNDABOUT_EXIT_CCW(46),
+      /**
+       * <code>FERRY_BOAT_LEFT = 47;</code>
+       */
+      FERRY_BOAT_LEFT(47),
+      /**
+       * <code>FERRY_BOAT_RIGHT = 48;</code>
+       */
+      FERRY_BOAT_RIGHT(48),
+      /**
+       * <code>FERRY_TRAIN_LEFT = 49;</code>
+       */
+      FERRY_TRAIN_LEFT(49),
+      /**
+       * <code>FERRY_TRAIN_RIGHT = 50;</code>
+       */
+      FERRY_TRAIN_RIGHT(50),
       ;
 
       /**
@@ -6965,6 +6997,38 @@ public final class NavigationStatus {
        * <code>DESTINATION_RIGHT = 42;</code>
        */
       public static final int DESTINATION_RIGHT_VALUE = 42;
+      /**
+       * <code>ROUNDABOUT_ENTER_CW = 43;</code>
+       */
+      public static final int ROUNDABOUT_ENTER_CW_VALUE = 43;
+      /**
+       * <code>ROUNDABOUT_EXIT_CW = 44;</code>
+       */
+      public static final int ROUNDABOUT_EXIT_CW_VALUE = 44;
+      /**
+       * <code>ROUNDABOUT_ENTER_CCW = 45;</code>
+       */
+      public static final int ROUNDABOUT_ENTER_CCW_VALUE = 45;
+      /**
+       * <code>ROUNDABOUT_EXIT_CCW = 46;</code>
+       */
+      public static final int ROUNDABOUT_EXIT_CCW_VALUE = 46;
+      /**
+       * <code>FERRY_BOAT_LEFT = 47;</code>
+       */
+      public static final int FERRY_BOAT_LEFT_VALUE = 47;
+      /**
+       * <code>FERRY_BOAT_RIGHT = 48;</code>
+       */
+      public static final int FERRY_BOAT_RIGHT_VALUE = 48;
+      /**
+       * <code>FERRY_TRAIN_LEFT = 49;</code>
+       */
+      public static final int FERRY_TRAIN_LEFT_VALUE = 49;
+      /**
+       * <code>FERRY_TRAIN_RIGHT = 50;</code>
+       */
+      public static final int FERRY_TRAIN_RIGHT_VALUE = 50;
 
 
       public final int getNumber() {
@@ -7030,6 +7094,14 @@ public final class NavigationStatus {
           case 40: return DESTINATION_STRAIGHT;
           case 41: return DESTINATION_LEFT;
           case 42: return DESTINATION_RIGHT;
+          case 43: return ROUNDABOUT_ENTER_CW;
+          case 44: return ROUNDABOUT_EXIT_CW;
+          case 45: return ROUNDABOUT_ENTER_CCW;
+          case 46: return ROUNDABOUT_EXIT_CCW;
+          case 47: return FERRY_BOAT_LEFT;
+          case 48: return FERRY_BOAT_RIGHT;
+          case 49: return FERRY_TRAIN_LEFT;
+          case 50: return FERRY_TRAIN_RIGHT;
           default: return null;
         }
       }
@@ -7718,107 +7790,111 @@ public final class NavigationStatus {
 
   }
 
-  public interface NavigationCueOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue)
+  public interface NavigationTextOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.andrerinas.openheadunit.aap.protocol.proto.NavigationText)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @return A list containing the alternateText.
+     * <code>optional string text = 1;</code>
+     * @return Whether the text field is set.
      */
-    java.util.List<java.lang.String>
-        getAlternateTextList();
+    boolean hasText();
     /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @return The count of alternateText.
+     * <code>optional string text = 1;</code>
+     * @return The text.
      */
-    int getAlternateTextCount();
+    java.lang.String getText();
     /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @param index The index of the element to return.
-     * @return The alternateText at the given index.
-     */
-    java.lang.String getAlternateText(int index);
-    /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the alternateText at the given index.
+     * <code>optional string text = 1;</code>
+     * @return The bytes for text.
      */
     com.google.protobuf.ByteString
-        getAlternateTextBytes(int index);
+        getTextBytes();
   }
   /**
-   * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue}
+   * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationText}
    */
-  public static final class NavigationCue extends
+  public static final class NavigationText extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue)
-      NavigationCueOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.andrerinas.openheadunit.aap.protocol.proto.NavigationText)
+      NavigationTextOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use NavigationCue.newBuilder() to construct.
-    private NavigationCue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use NavigationText.newBuilder() to construct.
+    private NavigationText(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private NavigationCue() {
-      alternateText_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+    private NavigationText() {
+      text_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new NavigationCue();
+      return new NavigationText();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_descriptor;
+      return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_fieldAccessorTable
+      return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.class, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder.class);
+              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.class, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder.class);
     }
 
-    public static final int ALTERNATE_TEXT_FIELD_NUMBER = 1;
+    private int bitField0_;
+    public static final int TEXT_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList alternateText_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private volatile java.lang.Object text_ = "";
     /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @return A list containing the alternateText.
+     * <code>optional string text = 1;</code>
+     * @return Whether the text field is set.
      */
-    public com.google.protobuf.ProtocolStringList
-        getAlternateTextList() {
-      return alternateText_;
+    @java.lang.Override
+    public boolean hasText() {
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @return The count of alternateText.
+     * <code>optional string text = 1;</code>
+     * @return The text.
      */
-    public int getAlternateTextCount() {
-      return alternateText_.size();
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          text_ = s;
+        }
+        return s;
+      }
     }
     /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @param index The index of the element to return.
-     * @return The alternateText at the given index.
+     * <code>optional string text = 1;</code>
+     * @return The bytes for text.
      */
-    public java.lang.String getAlternateText(int index) {
-      return alternateText_.get(index);
-    }
-    /**
-     * <code>repeated string alternate_text = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the alternateText at the given index.
-     */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getAlternateTextBytes(int index) {
-      return alternateText_.getByteString(index);
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7835,8 +7911,8 @@ public final class NavigationStatus {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < alternateText_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, alternateText_.getRaw(i));
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -7847,13 +7923,8 @@ public final class NavigationStatus {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < alternateText_.size(); i++) {
-          dataSize += computeStringSizeNoTag(alternateText_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getAlternateTextList().size();
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7865,13 +7936,16 @@ public final class NavigationStatus {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue)) {
+      if (!(obj instanceof com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText)) {
         return super.equals(obj);
       }
-      com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue other = (com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue) obj;
+      com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText other = (com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText) obj;
 
-      if (!getAlternateTextList()
-          .equals(other.getAlternateTextList())) return false;
+      if (hasText() != other.hasText()) return false;
+      if (hasText()) {
+        if (!getText()
+            .equals(other.getText())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7883,53 +7957,53 @@ public final class NavigationStatus {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getAlternateTextCount() > 0) {
-        hash = (37 * hash) + ALTERNATE_TEXT_FIELD_NUMBER;
-        hash = (53 * hash) + getAlternateTextList().hashCode();
+      if (hasText()) {
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(byte[] data)
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(java.io.InputStream input)
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7937,26 +8011,26 @@ public final class NavigationStatus {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseDelimitedFrom(java.io.InputStream input)
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseDelimitedFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue parseFrom(
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7969,7 +8043,7 @@ public final class NavigationStatus {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue prototype) {
+    public static Builder newBuilder(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7985,26 +8059,26 @@ public final class NavigationStatus {
       return builder;
     }
     /**
-     * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue}
+     * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationText}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue)
-        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCueOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.andrerinas.openheadunit.aap.protocol.proto.NavigationText)
+        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationTextOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_descriptor;
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_fieldAccessorTable
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.class, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.Builder.class);
+                com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.class, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.Builder.class);
       }
 
-      // Construct using com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.newBuilder()
+      // Construct using com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.newBuilder()
       private Builder() {
 
       }
@@ -8018,25 +8092,24 @@ public final class NavigationStatus {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        alternateText_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        text_ = "";
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_descriptor;
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_descriptor;
       }
 
       @java.lang.Override
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue getDefaultInstanceForType() {
-        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance();
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText getDefaultInstanceForType() {
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue build() {
-        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue result = buildPartial();
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText build() {
+        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8044,18 +8117,601 @@ public final class NavigationStatus {
       }
 
       @java.lang.Override
-      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue buildPartial() {
-        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue result = new com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue(this);
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText buildPartial() {
+        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText result = new com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue result) {
+      private void buildPartial0(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.text_ = text_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText) {
+          return mergeFrom((com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText other) {
+        if (other == com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText.getDefaultInstance()) return this;
+        if (other.hasText()) {
+          text_ = other.text_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                text_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object text_ = "";
+      /**
+       * <code>optional string text = 1;</code>
+       * @return Whether the text field is set.
+       */
+      public boolean hasText() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string text = 1;</code>
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            text_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string text = 1;</code>
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string text = 1;</code>
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        text_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string text = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string text = 1;</code>
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        text_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.andrerinas.openheadunit.aap.protocol.proto.NavigationText)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.andrerinas.openheadunit.aap.protocol.proto.NavigationText)
+    private static final com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText();
+    }
+
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<NavigationText>
+        PARSER = new com.google.protobuf.AbstractParser<NavigationText>() {
+      @java.lang.Override
+      public NavigationText parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<NavigationText> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NavigationText> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationText getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface NavigationRoadInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @return A list containing the roadNames.
+     */
+    java.util.List<java.lang.String>
+        getRoadNamesList();
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @return The count of roadNames.
+     */
+    int getRoadNamesCount();
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @param index The index of the element to return.
+     * @return The roadNames at the given index.
+     */
+    java.lang.String getRoadNames(int index);
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the roadNames at the given index.
+     */
+    com.google.protobuf.ByteString
+        getRoadNamesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo}
+   */
+  public static final class NavigationRoadInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo)
+      NavigationRoadInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use NavigationRoadInfo.newBuilder() to construct.
+    private NavigationRoadInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private NavigationRoadInfo() {
+      roadNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NavigationRoadInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.class, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder.class);
+    }
+
+    public static final int ROAD_NAMES_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList roadNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @return A list containing the roadNames.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRoadNamesList() {
+      return roadNames_;
+    }
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @return The count of roadNames.
+     */
+    public int getRoadNamesCount() {
+      return roadNames_.size();
+    }
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @param index The index of the element to return.
+     * @return The roadNames at the given index.
+     */
+    public java.lang.String getRoadNames(int index) {
+      return roadNames_.get(index);
+    }
+    /**
+     * <code>repeated string road_names = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the roadNames at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRoadNamesBytes(int index) {
+      return roadNames_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < roadNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roadNames_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < roadNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(roadNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRoadNamesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo)) {
+        return super.equals(obj);
+      }
+      com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo other = (com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo) obj;
+
+      if (!getRoadNamesList()
+          .equals(other.getRoadNamesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRoadNamesCount() > 0) {
+        hash = (37 * hash) + ROAD_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getRoadNamesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo)
+        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.class, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.Builder.class);
+      }
+
+      // Construct using com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roadNames_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo getDefaultInstanceForType() {
+        return com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo build() {
+        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo buildPartial() {
+        com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo result = new com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          alternateText_.makeImmutable();
-          result.alternateText_ = alternateText_;
+          roadNames_.makeImmutable();
+          result.roadNames_ = roadNames_;
         }
       }
 
@@ -8093,23 +8749,23 @@ public final class NavigationStatus {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue) {
-          return mergeFrom((com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue)other);
+        if (other instanceof com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo) {
+          return mergeFrom((com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue other) {
-        if (other == com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue.getDefaultInstance()) return this;
-        if (!other.alternateText_.isEmpty()) {
-          if (alternateText_.isEmpty()) {
-            alternateText_ = other.alternateText_;
+      public Builder mergeFrom(com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo other) {
+        if (other == com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo.getDefaultInstance()) return this;
+        if (!other.roadNames_.isEmpty()) {
+          if (roadNames_.isEmpty()) {
+            roadNames_ = other.roadNames_;
             bitField0_ |= 0x00000001;
           } else {
-            ensureAlternateTextIsMutable();
-            alternateText_.addAll(other.alternateText_);
+            ensureRoadNamesIsMutable();
+            roadNames_.addAll(other.roadNames_);
           }
           onChanged();
         }
@@ -8141,8 +8797,8 @@ public final class NavigationStatus {
                 break;
               case 10: {
                 com.google.protobuf.ByteString bs = input.readBytes();
-                ensureAlternateTextIsMutable();
-                alternateText_.add(bs);
+                ensureRoadNamesIsMutable();
+                roadNames_.add(bs);
                 break;
               } // case 10
               default: {
@@ -8162,111 +8818,111 @@ public final class NavigationStatus {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringArrayList alternateText_ =
+      private com.google.protobuf.LazyStringArrayList roadNames_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-      private void ensureAlternateTextIsMutable() {
-        if (!alternateText_.isModifiable()) {
-          alternateText_ = new com.google.protobuf.LazyStringArrayList(alternateText_);
+      private void ensureRoadNamesIsMutable() {
+        if (!roadNames_.isModifiable()) {
+          roadNames_ = new com.google.protobuf.LazyStringArrayList(roadNames_);
         }
         bitField0_ |= 0x00000001;
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
-       * @return A list containing the alternateText.
+       * <code>repeated string road_names = 1;</code>
+       * @return A list containing the roadNames.
        */
       public com.google.protobuf.ProtocolStringList
-          getAlternateTextList() {
-        alternateText_.makeImmutable();
-        return alternateText_;
+          getRoadNamesList() {
+        roadNames_.makeImmutable();
+        return roadNames_;
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
-       * @return The count of alternateText.
+       * <code>repeated string road_names = 1;</code>
+       * @return The count of roadNames.
        */
-      public int getAlternateTextCount() {
-        return alternateText_.size();
+      public int getRoadNamesCount() {
+        return roadNames_.size();
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
+       * <code>repeated string road_names = 1;</code>
        * @param index The index of the element to return.
-       * @return The alternateText at the given index.
+       * @return The roadNames at the given index.
        */
-      public java.lang.String getAlternateText(int index) {
-        return alternateText_.get(index);
+      public java.lang.String getRoadNames(int index) {
+        return roadNames_.get(index);
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
+       * <code>repeated string road_names = 1;</code>
        * @param index The index of the value to return.
-       * @return The bytes of the alternateText at the given index.
+       * @return The bytes of the roadNames at the given index.
        */
       public com.google.protobuf.ByteString
-          getAlternateTextBytes(int index) {
-        return alternateText_.getByteString(index);
+          getRoadNamesBytes(int index) {
+        return roadNames_.getByteString(index);
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
+       * <code>repeated string road_names = 1;</code>
        * @param index The index to set the value at.
-       * @param value The alternateText to set.
+       * @param value The roadNames to set.
        * @return This builder for chaining.
        */
-      public Builder setAlternateText(
+      public Builder setRoadNames(
           int index, java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        ensureAlternateTextIsMutable();
-        alternateText_.set(index, value);
+        ensureRoadNamesIsMutable();
+        roadNames_.set(index, value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
-       * @param value The alternateText to add.
+       * <code>repeated string road_names = 1;</code>
+       * @param value The roadNames to add.
        * @return This builder for chaining.
        */
-      public Builder addAlternateText(
+      public Builder addRoadNames(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        ensureAlternateTextIsMutable();
-        alternateText_.add(value);
+        ensureRoadNamesIsMutable();
+        roadNames_.add(value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
-       * @param values The alternateText to add.
+       * <code>repeated string road_names = 1;</code>
+       * @param values The roadNames to add.
        * @return This builder for chaining.
        */
-      public Builder addAllAlternateText(
+      public Builder addAllRoadNames(
           java.lang.Iterable<java.lang.String> values) {
-        ensureAlternateTextIsMutable();
+        ensureRoadNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, alternateText_);
+            values, roadNames_);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
+       * <code>repeated string road_names = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAlternateText() {
-        alternateText_ =
+      public Builder clearRoadNames() {
+        roadNames_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string alternate_text = 1;</code>
-       * @param value The bytes of the alternateText to add.
+       * <code>repeated string road_names = 1;</code>
+       * @param value The bytes of the roadNames to add.
        * @return This builder for chaining.
        */
-      public Builder addAlternateTextBytes(
+      public Builder addRoadNamesBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
-        ensureAlternateTextIsMutable();
-        alternateText_.add(value);
+        ensureRoadNamesIsMutable();
+        roadNames_.add(value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
@@ -8284,23 +8940,23 @@ public final class NavigationStatus {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue)
+      // @@protoc_insertion_point(builder_scope:com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:com.andrerinas.openheadunit.aap.protocol.proto.NavigationCue)
-    private static final com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoadInfo)
+    private static final com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue();
+      DEFAULT_INSTANCE = new com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo();
     }
 
-    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue getDefaultInstance() {
+    public static com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<NavigationCue>
-        PARSER = new com.google.protobuf.AbstractParser<NavigationCue>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<NavigationRoadInfo>
+        PARSER = new com.google.protobuf.AbstractParser<NavigationRoadInfo>() {
       @java.lang.Override
-      public NavigationCue parsePartialFrom(
+      public NavigationRoadInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8319,17 +8975,17 @@ public final class NavigationStatus {
       }
     };
 
-    public static com.google.protobuf.Parser<NavigationCue> parser() {
+    public static com.google.protobuf.Parser<NavigationRoadInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<NavigationCue> getParserForType() {
+    public com.google.protobuf.Parser<NavigationRoadInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationCue getDefaultInstanceForType() {
+    public com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8342,7 +8998,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
      */
-    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection> 
+    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection>
         getLaneDirectionsList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
@@ -8355,7 +9011,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
      */
-    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder> 
+    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder>
         getLaneDirectionsOrBuilderList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
@@ -9195,7 +9851,7 @@ public final class NavigationStatus {
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder> 
+    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder>
         getLaneDirectionsOrBuilderList() {
       return laneDirections_;
     }
@@ -9532,7 +10188,7 @@ public final class NavigationStatus {
               laneDirectionsBuilder_ = null;
               laneDirections_ = other.laneDirections_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              laneDirectionsBuilder_ = 
+              laneDirectionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLaneDirectionsFieldBuilder() : null;
             } else {
@@ -9791,7 +10447,7 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
        */
-      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder> 
+      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder>
            getLaneDirectionsOrBuilderList() {
         if (laneDirectionsBuilder_ != null) {
           return laneDirectionsBuilder_.getMessageOrBuilderList();
@@ -9817,12 +10473,12 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationLane.LaneDirection lane_directions = 1;</code>
        */
-      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection.Builder> 
+      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection.Builder>
            getLaneDirectionsBuilderList() {
         return getLaneDirectionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirection.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationLane.LaneDirectionOrBuilder>
           getLaneDirectionsFieldBuilder() {
         if (laneDirectionsBuilder_ == null) {
           laneDirectionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -9978,7 +10634,7 @@ public final class NavigationStatus {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -9996,7 +10652,7 @@ public final class NavigationStatus {
         getAddressBytes() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         address_ = b;
@@ -10374,7 +11030,7 @@ public final class NavigationStatus {
           getAddressBytes() {
         java.lang.Object ref = address_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           address_ = b;
@@ -10505,7 +11161,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
      */
-    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance> 
+    java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance>
         getDestinationDistancesList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
@@ -10518,7 +11174,7 @@ public final class NavigationStatus {
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
      */
-    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder> 
+    java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder>
         getDestinationDistancesOrBuilderList();
     /**
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
@@ -10618,7 +11274,7 @@ public final class NavigationStatus {
      * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder> 
+    public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder>
         getDestinationDistancesOrBuilderList() {
       return destinationDistances_;
     }
@@ -11048,7 +11704,7 @@ public final class NavigationStatus {
               destinationDistancesBuilder_ = null;
               destinationDistances_ = other.destinationDistances_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              destinationDistancesBuilder_ = 
+              destinationDistancesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDestinationDistancesFieldBuilder() : null;
             } else {
@@ -11237,7 +11893,7 @@ public final class NavigationStatus {
        * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationStepDistance step_distance = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepDistanceOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationStepDistanceOrBuilder>
           getStepDistanceFieldBuilder() {
         if (stepDistanceBuilder_ == null) {
           stepDistanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11445,7 +12101,7 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
        */
-      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder> 
+      public java.util.List<? extends com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder>
            getDestinationDistancesOrBuilderList() {
         if (destinationDistancesBuilder_ != null) {
           return destinationDistancesBuilder_.getMessageOrBuilderList();
@@ -11471,12 +12127,12 @@ public final class NavigationStatus {
       /**
        * <code>repeated .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDestinationDistance destination_distances = 2;</code>
        */
-      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance.Builder> 
+      public java.util.List<com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance.Builder>
            getDestinationDistancesBuilderList() {
         return getDestinationDistancesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDestinationDistanceOrBuilder>
           getDestinationDistancesFieldBuilder() {
         if (destinationDistancesBuilder_ == null) {
           destinationDistancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -11598,7 +12254,7 @@ public final class NavigationStatus {
        * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationRoad current_road = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoad.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationRoadOrBuilder>
           getCurrentRoadFieldBuilder() {
         if (currentRoadBuilder_ == null) {
           currentRoadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12270,7 +12926,7 @@ public final class NavigationStatus {
        * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDistance distance = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistanceOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistanceOrBuilder>
           getDistanceFieldBuilder() {
         if (distanceBuilder_ == null) {
           distanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12517,7 +13173,7 @@ public final class NavigationStatus {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -12535,7 +13191,7 @@ public final class NavigationStatus {
         getEstimatedTimeAtArrivalBytes() {
       java.lang.Object ref = estimatedTimeAtArrival_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         estimatedTimeAtArrival_ = b;
@@ -13079,7 +13735,7 @@ public final class NavigationStatus {
        * <code>optional .com.andrerinas.openheadunit.aap.protocol.proto.NavigationDistance distance = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistanceOrBuilder> 
+          com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistance.Builder, com.andrerinas.openheadunit.aap.protocol.proto.NavigationStatus.NavigationDistanceOrBuilder>
           getDistanceFieldBuilder() {
         if (distanceBuilder_ == null) {
           distanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13126,7 +13782,7 @@ public final class NavigationStatus {
           getEstimatedTimeAtArrivalBytes() {
         java.lang.Object ref = estimatedTimeAtArrival_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           estimatedTimeAtArrival_ = b;
@@ -13354,7 +14010,7 @@ public final class NavigationStatus {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13372,7 +14028,7 @@ public final class NavigationStatus {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -13750,7 +14406,7 @@ public final class NavigationStatus {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -14130,7 +14786,7 @@ public final class NavigationStatus {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -14148,7 +14804,7 @@ public final class NavigationStatus {
         getDisplayValueBytes() {
       java.lang.Object ref = displayValue_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         displayValue_ = b;
@@ -14648,7 +15304,7 @@ public final class NavigationStatus {
           getDisplayValueBytes() {
         java.lang.Object ref = displayValue_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           displayValue_ = b;
@@ -14801,87 +15457,92 @@ public final class NavigationStatus {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStatusStart_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStatusStart_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStatusStop_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStatusStop_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationClusterStatus_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationClusterStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NextTurnDetail_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NextTurnDetail_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NextTurnDistanceEvent_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NextTurnDistanceEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationState_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationState_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStep_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStep_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationManeuver_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationManeuver_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_descriptor;
-  private static final 
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_descriptor;
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_fieldAccessorTable;
+      internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_LaneDirection_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_LaneDirection_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestination_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestination_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCurrentPosition_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCurrentPosition_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStepDistance_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStepDistance_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestinationDistance_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestinationDistance_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoad_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoad_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDistance_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDistance_fieldAccessorTable;
 
@@ -14893,127 +15554,133 @@ public final class NavigationStatus {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\012\020navigation.proto\022.com.andrerinas.openh" +
-      "eadunit.aap.protocol.proto\"\027\012\025Navigation" +
-      "StatusStart\"\026\012\024NavigationStatusStop\"\331\001\012\027" +
-      "NavigationClusterStatus\022l\012\006status\030\001 \002(\0162" +
+      "\n\020navigation.proto\022.com.andrerinas.openh" +
+      "eadunit.aap.protocol.proto\"\027\n\025Navigation" +
+      "StatusStart\"\026\n\024NavigationStatusStop\"\331\001\n\027" +
+      "NavigationClusterStatus\022l\n\006status\030\001 \002(\0162" +
       "\\.com.andrerinas.openheadunit.aap.protoc" +
       "ol.proto.NavigationClusterStatus.Navigat" +
-      "ionStatusEnum\"P\012\024NavigationStatusEnum\022\017\012" +
-      "\013UNAVAILABLE\020\000\022\012\012\006ACTIVE\020\001\022\014\012\010INACTIVE\020\002" +
-      "\022\015\012\011REROUTING\020\003\"\334\004\012\016NextTurnDetail\022\014\012\004ro" +
-      "ad\030\001 \002(\011\022Q\012\004side\030\002 \001(\0162C.com.andrerinas." +
+      "ionStatusEnum\"P\n\024NavigationStatusEnum\022\017\n" +
+      "\013UNAVAILABLE\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002" +
+      "\022\r\n\tREROUTING\020\003\"\334\004\n\016NextTurnDetail\022\014\n\004ro" +
+      "ad\030\001 \002(\t\022Q\n\004side\030\002 \001(\0162C.com.andrerinas." +
       "openheadunit.aap.protocol.proto.NextTurn" +
-      "Detail.Side\022[\012\011next_turn\030\003 \001(\0162H.com.and" +
+      "Detail.Side\022[\n\tnext_turn\030\003 \001(\0162H.com.and" +
       "rerinas.openheadunit.aap.protocol.proto." +
-      "NextTurnDetail.NextEvent\022\015\012\005image\030\004 \001(\014\022" +
-      "\023\012\013turn_number\030\005 \001(\005\022\022\012\012turn_angle\030\006 \001(\005" +
-      "\",\012\004Side\022\010\012\004LEFT\020\001\022\011\012\005RIGHT\020\002\022\017\012\013UNSPECI" +
-      "FIED\020\003\"\245\002\012\011NextEvent\022\013\012\007UNKNOWN\020\000\022\012\012\006DEP" +
-      "ART\020\001\022\017\012\013NAME_CHANGE\020\002\022\017\012\013SLIGHT_TURN\020\003\022" +
-      "\010\012\004TURN\020\004\022\016\012\012SHARP_TURN\020\005\022\012\012\006U_TURN\020\006\022\013\012" +
-      "\007ON_RAMP\020\007\022\013\012\007OFFRAMP\020\010\022\010\012\004FORK\020\011\022\011\012\005MER" +
-      "GE\020\012\022\024\012\020ROUNDABOUT_ENTER\020\013\022\023\012\017ROUNDABOUT" +
-      "_EXIT\020\014\022\035\012\031ROUNDABOUT_ENTER_AND_EXIT\020\015\022\014" +
-      "\012\010STRAIGHT\020\016\022\016\012\012FERRY_BOAT\020\020\022\017\012\013FERRY_TR" +
-      "AIN\020\021\022\017\012\013DESTINATION\020\022\"\351\002\012\025NextTurnDista" +
-      "nceEvent\022\027\012\017distance_meters\030\001 \001(\005\022\034\012\024tim" +
-      "e_to_turn_seconds\030\002 \001(\005\022\033\012\023display_dista" +
-      "nce_e3\030\003 \001(\005\022r\012\025display_distance_unit\030\004 " +
+      "NextTurnDetail.NextEvent\022\r\n\005image\030\004 \001(\014\022" +
+      "\023\n\013turn_number\030\005 \001(\005\022\022\n\nturn_angle\030\006 \001(\005" +
+      "\",\n\004Side\022\010\n\004LEFT\020\001\022\t\n\005RIGHT\020\002\022\017\n\013UNSPECI" +
+      "FIED\020\003\"\245\002\n\tNextEvent\022\013\n\007UNKNOWN\020\000\022\n\n\006DEP" +
+      "ART\020\001\022\017\n\013NAME_CHANGE\020\002\022\017\n\013SLIGHT_TURN\020\003\022" +
+      "\010\n\004TURN\020\004\022\016\n\nSHARP_TURN\020\005\022\n\n\006U_TURN\020\006\022\013\n" +
+      "\007ON_RAMP\020\007\022\013\n\007OFFRAMP\020\010\022\010\n\004FORK\020\t\022\t\n\005MER" +
+      "GE\020\n\022\024\n\020ROUNDABOUT_ENTER\020\013\022\023\n\017ROUNDABOUT" +
+      "_EXIT\020\014\022\035\n\031ROUNDABOUT_ENTER_AND_EXIT\020\r\022\014" +
+      "\n\010STRAIGHT\020\016\022\016\n\nFERRY_BOAT\020\020\022\017\n\013FERRY_TR" +
+      "AIN\020\021\022\017\n\013DESTINATION\020\022\"\351\002\n\025NextTurnDista" +
+      "nceEvent\022\027\n\017distance_meters\030\001 \001(\005\022\034\n\024tim" +
+      "e_to_turn_seconds\030\002 \001(\005\022\033\n\023display_dista" +
+      "nce_e3\030\003 \001(\005\022r\n\025display_distance_unit\030\004 " +
       "\001(\0162S.com.andrerinas.openheadunit.aap.pr" +
       "otocol.proto.NextTurnDistanceEvent.Dista" +
-      "nceUnits\"\207\001\012\015DistanceUnits\022\031\012\025UNKNOWN_DI" +
-      "STANCE_UNIT\020\000\022\012\012\006METERS\020\001\022\016\012\012KILOMETERS\020" +
-      "\002\022\021\012\015KILOMETERS_P1\020\003\022\011\012\005MILES\020\004\022\014\012\010MILES" +
-      "_P1\020\005\022\010\012\004FEET\020\006\022\011\012\005YARDS\020\007\"\275\001\012\017Navigatio" +
-      "nState\022M\012\005steps\030\001 \003(\0132>.com.andrerinas.o" +
+      "nceUnits\"\207\001\n\rDistanceUnits\022\031\n\025UNKNOWN_DI" +
+      "STANCE_UNIT\020\000\022\n\n\006METERS\020\001\022\016\n\nKILOMETERS\020" +
+      "\002\022\021\n\rKILOMETERS_P1\020\003\022\t\n\005MILES\020\004\022\014\n\010MILES" +
+      "_P1\020\005\022\010\n\004FEET\020\006\022\t\n\005YARDS\020\007\"\275\001\n\017Navigatio" +
+      "nState\022M\n\005steps\030\001 \003(\0132>.com.andrerinas.o" +
       "penheadunit.aap.protocol.proto.Navigatio" +
-      "nStep\022[\012\014destinations\030\002 \003(\0132E.com.andrer" +
+      "nStep\022[\n\014destinations\030\002 \003(\0132E.com.andrer" +
       "inas.openheadunit.aap.protocol.proto.Nav" +
-      "igationDestination\"\317\002\012\016NavigationStep\022T\012" +
+      "igationDestination\"\341\002\n\016NavigationStep\022T\n" +
       "\010maneuver\030\001 \001(\0132B.com.andrerinas.openhea" +
       "dunit.aap.protocol.proto.NavigationManeu" +
-      "ver\022L\012\004road\030\002 \001(\0132>.com.andrerinas.openh" +
-      "eadunit.aap.protocol.proto.NavigationRoa" +
-      "d\022M\012\005lanes\030\003 \003(\0132>.com.andrerinas.openhe" +
-      "adunit.aap.protocol.proto.NavigationLane" +
-      "\022J\012\003cue\030\004 \001(\0132=.com.andrerinas.openheadu" +
-      "nit.aap.protocol.proto.NavigationCue\"\232\011\012" +
-      "\022NavigationManeuver\022_\012\004type\030\001 \001(\0162Q.com." +
-      "andrerinas.openheadunit.aap.protocol.pro" +
-      "to.NavigationManeuver.NavigationType\022\036\012\026" +
-      "roundabout_exit_number\030\002 \001(\005\022\035\012\025roundabo" +
-      "ut_exit_angle\030\003 \001(\005\"\343\007\012\016NavigationType\022\013" +
-      "\012\007UNKNOWN\020\000\022\012\012\006DEPART\020\001\022\017\012\013NAME_CHANGE\020\002" +
-      "\022\015\012\011KEEP_LEFT\020\003\022\016\012\012KEEP_RIGHT\020\004\022\024\012\020TURN_" +
-      "SLIGHT_LEFT\020\005\022\025\012\021TURN_SLIGHT_RIGHT\020\006\022\024\012\020" +
-      "TURN_NORMAL_LEFT\020\007\022\025\012\021TURN_NORMAL_RIGHT\020" +
-      "\010\022\023\012\017TURN_SHARP_LEFT\020\011\022\024\012\020TURN_SHARP_RIG" +
-      "HT\020\012\022\017\012\013U_TURN_LEFT\020\013\022\020\012\014U_TURN_RIGHT\020\014\022" +
-      "\027\012\023ON_RAMP_SLIGHT_LEFT\020\015\022\030\012\024ON_RAMP_SLIG" +
-      "HT_RIGHT\020\016\022\027\012\023ON_RAMP_NORMAL_LEFT\020\017\022\030\012\024O" +
-      "N_RAMP_NORMAL_RIGHT\020\020\022\026\012\022ON_RAMP_SHARP_L" +
-      "EFT\020\021\022\027\012\023ON_RAMP_SHARP_RIGHT\020\022\022\027\012\023ON_RAM" +
-      "P_U_TURN_LEFT\020\023\022\030\012\024ON_RAMP_U_TURN_RIGHT\020" +
-      "\024\022\030\012\024OFF_RAMP_SLIGHT_LEFT\020\025\022\031\012\025OFF_RAMP_" +
-      "SLIGHT_RIGHT\020\026\022\030\012\024OFF_RAMP_NORMAL_LEFT\020\027" +
-      "\022\031\012\025OFF_RAMP_NORMAL_RIGHT\020\030\022\015\012\011FORK_LEFT" +
-      "\020\031\022\016\012\012FORK_RIGHT\020\032\022\016\012\012MERGE_LEFT\020\033\022\017\012\013ME" +
-      "RGE_RIGHT\020\034\022\032\012\026MERGE_SIDE_UNSPECIFIED\020\035\022" +
-      "\024\012\020ROUNDABOUT_ENTER\020\036\022\023\012\017ROUNDABOUT_EXIT" +
-      "\020\037\022 \012\034ROUNDABOUT_ENTER_AND_EXIT_CW\020 \022+\012'" +
-      "ROUNDABOUT_ENTER_AND_EXIT_CW_WITH_ANGLE\020" +
-      "!\022!\012\035ROUNDABOUT_ENTER_AND_EXIT_CCW\020\"\022,\012(" +
-      "ROUNDABOUT_ENTER_AND_EXIT_CCW_WITH_ANGLE" +
-      "\020#\022\014\012\010STRAIGHT\020$\022\016\012\012FERRY_BOAT\020%\022\017\012\013FERR" +
-      "Y_TRAIN\020&\022\017\012\013DESTINATION\020'\022\030\012\024DESTINATIO" +
-      "N_STRAIGHT\020(\022\024\012\020DESTINATION_LEFT\020)\022\025\012\021DE" +
-      "STINATION_RIGHT\020*\"'\012\015NavigationCue\022\026\012\016al" +
-      "ternate_text\030\001 \003(\011\"\263\003\012\016NavigationLane\022e\012" +
-      "\017lane_directions\030\001 \003(\0132L.com.andrerinas." +
-      "openheadunit.aap.protocol.proto.Navigati" +
-      "onLane.LaneDirection\032\271\002\012\015LaneDirection\022a" +
-      "\012\005shape\030\001 \001(\0162R.com.andrerinas.openheadu" +
-      "nit.aap.protocol.proto.NavigationLane.La" +
-      "neDirection.Shape\022\026\012\016is_highlighted\030\002 \001(" +
-      "\010\"\254\001\012\005Shape\022\013\012\007UNKNOWN\020\000\022\014\012\010STRAIGHT\020\001\022\017" +
-      "\012\013SLIGHT_LEFT\020\002\022\020\012\014SLIGHT_RIGHT\020\003\022\017\012\013NOR" +
-      "MAL_LEFT\020\004\022\020\012\014NORMAL_RIGHT\020\005\022\016\012\012SHARP_LE" +
-      "FT\020\006\022\017\012\013SHARP_RIGHT\020\007\022\017\012\013U_TURN_LEFT\020\010\022\020" +
-      "\012\014U_TURN_RIGHT\020\011\"(\012\025NavigationDestinatio" +
-      "n\022\017\012\007address\030\001 \001(\011\"\276\002\012\031NavigationCurrent" +
-      "Position\022]\012\015step_distance\030\001 \001(\0132F.com.an" +
-      "drerinas.openheadunit.aap.protocol.proto" +
-      ".NavigationStepDistance\022l\012\025destination_d" +
-      "istances\030\002 \003(\0132M.com.andrerinas.openhead" +
-      "unit.aap.protocol.proto.NavigationDestin" +
-      "ationDistance\022T\012\014current_road\030\003 \001(\0132>.co" +
-      "m.andrerinas.openheadunit.aap.protocol.p" +
-      "roto.NavigationRoad\"\214\001\012\026NavigationStepDi" +
-      "stance\022T\012\010distance\030\001 \001(\0132B.com.andrerina" +
+      "ver\022S\n\013instruction\030\002 \001(\0132>.com.andrerina" +
       "s.openheadunit.aap.protocol.proto.Naviga" +
-      "tionDistance\022\034\012\024time_to_step_seconds\030\002 \001" +
-      "(\003\"\271\001\012\035NavigationDestinationDistance\022T\012\010" +
-      "distance\030\001 \001(\0132B.com.andrerinas.openhead" +
-      "unit.aap.protocol.proto.NavigationDistan" +
-      "ce\022!\012\031estimated_time_at_arrival\030\002 \001(\011\022\037\012" +
-      "\027time_to_arrival_seconds\030\003 \001(\003\"\036\012\016Naviga" +
-      "tionRoad\022\014\012\004name\030\001 \001(\011\"\256\002\012\022NavigationDis" +
-      "tance\022\016\012\006meters\030\001 \001(\005\022\025\012\015display_value\030\002" +
-      " \001(\011\022g\012\015display_units\030\003 \001(\0162P.com.andrer" +
-      "inas.openheadunit.aap.protocol.proto.Nav" +
-      "igationDistance.DistanceUnits\"\207\001\012\015Distan" +
-      "ceUnits\022\031\012\025UNKNOWN_DISTANCE_UNIT\020\000\022\012\012\006ME" +
-      "TERS\020\001\022\016\012\012KILOMETERS\020\002\022\021\012\015KILOMETERS_P1\020" +
-      "\003\022\011\012\005MILES\020\004\022\014\012\010MILES_P1\020\005\022\010\012\004FEET\020\006\022\011\012\005" +
-      "YARDS\020\007*\213\002\012\007MsgType\022\036\012\030INSTRUMENT_CLUSTE" +
-      "R_START\020\201\200\002\022\035\012\027INSTRUMENT_CLUSTER_STOP\020\202" +
-      "\200\002\022*\012$INSTRUMENT_CLUSTER_NAVIGATION_STAT" +
-      "US\020\203\200\002\022\025\012\017NEXTTURNDETAILS\020\204\200\002\022\035\012\027NEXTTUR" +
-      "NDISTANCEANDTIME\020\205\200\002\022)\012#INSTRUMENT_CLUST" +
-      "ER_NAVIGATION_STATE\020\206\200\002\0224\012.INSTRUMENT_CL" +
-      "USTER_NAVIGATION_CURRENT_POSITION\020\207\200\002B\022B" +
-      "\020NavigationStatus"
+      "tionText\022M\n\005lanes\030\003 \003(\0132>.com.andrerinas" +
+      ".openheadunit.aap.protocol.proto.Navigat" +
+      "ionLane\022U\n\troad_info\030\004 \001(\0132B.com.andreri" +
+      "nas.openheadunit.aap.protocol.proto.Navi" +
+      "gationRoadInfo\"\326\n\n\022NavigationManeuver\022_\n" +
+      "\004type\030\001 \001(\0162Q.com.andrerinas.openheaduni" +
+      "t.aap.protocol.proto.NavigationManeuver." +
+      "NavigationType\022\036\n\026roundabout_exit_number" +
+      "\030\002 \001(\005\022\035\n\025roundabout_exit_angle\030\003 \001(\005\"\237\t" +
+      "\n\016NavigationType\022\013\n\007UNKNOWN\020\000\022\n\n\006DEPART\020" +
+      "\001\022\017\n\013NAME_CHANGE\020\002\022\r\n\tKEEP_LEFT\020\003\022\016\n\nKEE" +
+      "P_RIGHT\020\004\022\024\n\020TURN_SLIGHT_LEFT\020\005\022\025\n\021TURN_" +
+      "SLIGHT_RIGHT\020\006\022\024\n\020TURN_NORMAL_LEFT\020\007\022\025\n\021" +
+      "TURN_NORMAL_RIGHT\020\010\022\023\n\017TURN_SHARP_LEFT\020\t" +
+      "\022\024\n\020TURN_SHARP_RIGHT\020\n\022\017\n\013U_TURN_LEFT\020\013\022" +
+      "\020\n\014U_TURN_RIGHT\020\014\022\027\n\023ON_RAMP_SLIGHT_LEFT" +
+      "\020\r\022\030\n\024ON_RAMP_SLIGHT_RIGHT\020\016\022\027\n\023ON_RAMP_" +
+      "NORMAL_LEFT\020\017\022\030\n\024ON_RAMP_NORMAL_RIGHT\020\020\022" +
+      "\026\n\022ON_RAMP_SHARP_LEFT\020\021\022\027\n\023ON_RAMP_SHARP" +
+      "_RIGHT\020\022\022\027\n\023ON_RAMP_U_TURN_LEFT\020\023\022\030\n\024ON_" +
+      "RAMP_U_TURN_RIGHT\020\024\022\030\n\024OFF_RAMP_SLIGHT_L" +
+      "EFT\020\025\022\031\n\025OFF_RAMP_SLIGHT_RIGHT\020\026\022\030\n\024OFF_" +
+      "RAMP_NORMAL_LEFT\020\027\022\031\n\025OFF_RAMP_NORMAL_RI" +
+      "GHT\020\030\022\r\n\tFORK_LEFT\020\031\022\016\n\nFORK_RIGHT\020\032\022\016\n\n" +
+      "MERGE_LEFT\020\033\022\017\n\013MERGE_RIGHT\020\034\022\032\n\026MERGE_S" +
+      "IDE_UNSPECIFIED\020\035\022\024\n\020ROUNDABOUT_ENTER\020\036\022" +
+      "\023\n\017ROUNDABOUT_EXIT\020\037\022 \n\034ROUNDABOUT_ENTER" +
+      "_AND_EXIT_CW\020 \022+\n\'ROUNDABOUT_ENTER_AND_E" +
+      "XIT_CW_WITH_ANGLE\020!\022!\n\035ROUNDABOUT_ENTER_" +
+      "AND_EXIT_CCW\020\"\022,\n(ROUNDABOUT_ENTER_AND_E" +
+      "XIT_CCW_WITH_ANGLE\020#\022\014\n\010STRAIGHT\020$\022\016\n\nFE" +
+      "RRY_BOAT\020%\022\017\n\013FERRY_TRAIN\020&\022\017\n\013DESTINATI" +
+      "ON\020\'\022\030\n\024DESTINATION_STRAIGHT\020(\022\024\n\020DESTIN" +
+      "ATION_LEFT\020)\022\025\n\021DESTINATION_RIGHT\020*\022\027\n\023R" +
+      "OUNDABOUT_ENTER_CW\020+\022\026\n\022ROUNDABOUT_EXIT_" +
+      "CW\020,\022\030\n\024ROUNDABOUT_ENTER_CCW\020-\022\027\n\023ROUNDA" +
+      "BOUT_EXIT_CCW\020.\022\023\n\017FERRY_BOAT_LEFT\020/\022\024\n\020" +
+      "FERRY_BOAT_RIGHT\0200\022\024\n\020FERRY_TRAIN_LEFT\0201" +
+      "\022\025\n\021FERRY_TRAIN_RIGHT\0202\"\036\n\016NavigationTex" +
+      "t\022\014\n\004text\030\001 \001(\t\"(\n\022NavigationRoadInfo\022\022\n" +
+      "\nroad_names\030\001 \003(\t\"\263\003\n\016NavigationLane\022e\n\017" +
+      "lane_directions\030\001 \003(\0132L.com.andrerinas.o" +
+      "penheadunit.aap.protocol.proto.Navigatio" +
+      "nLane.LaneDirection\032\271\002\n\rLaneDirection\022a\n" +
+      "\005shape\030\001 \001(\0162R.com.andrerinas.openheadun" +
+      "it.aap.protocol.proto.NavigationLane.Lan" +
+      "eDirection.Shape\022\026\n\016is_highlighted\030\002 \001(\010" +
+      "\"\254\001\n\005Shape\022\013\n\007UNKNOWN\020\000\022\014\n\010STRAIGHT\020\001\022\017\n" +
+      "\013SLIGHT_LEFT\020\002\022\020\n\014SLIGHT_RIGHT\020\003\022\017\n\013NORM" +
+      "AL_LEFT\020\004\022\020\n\014NORMAL_RIGHT\020\005\022\016\n\nSHARP_LEF" +
+      "T\020\006\022\017\n\013SHARP_RIGHT\020\007\022\017\n\013U_TURN_LEFT\020\010\022\020\n" +
+      "\014U_TURN_RIGHT\020\t\"(\n\025NavigationDestination" +
+      "\022\017\n\007address\030\001 \001(\t\"\276\002\n\031NavigationCurrentP" +
+      "osition\022]\n\rstep_distance\030\001 \001(\0132F.com.and" +
+      "rerinas.openheadunit.aap.protocol.proto." +
+      "NavigationStepDistance\022l\n\025destination_di" +
+      "stances\030\002 \003(\0132M.com.andrerinas.openheadu" +
+      "nit.aap.protocol.proto.NavigationDestina" +
+      "tionDistance\022T\n\014current_road\030\003 \001(\0132>.com" +
+      ".andrerinas.openheadunit.aap.protocol.pr" +
+      "oto.NavigationRoad\"\214\001\n\026NavigationStepDis" +
+      "tance\022T\n\010distance\030\001 \001(\0132B.com.andrerinas" +
+      ".openheadunit.aap.protocol.proto.Navigat" +
+      "ionDistance\022\034\n\024time_to_step_seconds\030\002 \001(" +
+      "\003\"\271\001\n\035NavigationDestinationDistance\022T\n\010d" +
+      "istance\030\001 \001(\0132B.com.andrerinas.openheadu" +
+      "nit.aap.protocol.proto.NavigationDistanc" +
+      "e\022!\n\031estimated_time_at_arrival\030\002 \001(\t\022\037\n\027" +
+      "time_to_arrival_seconds\030\003 \001(\003\"\036\n\016Navigat" +
+      "ionRoad\022\014\n\004name\030\001 \001(\t\"\256\002\n\022NavigationDist" +
+      "ance\022\016\n\006meters\030\001 \001(\005\022\025\n\rdisplay_value\030\002 " +
+      "\001(\t\022g\n\rdisplay_units\030\003 \001(\0162P.com.andreri" +
+      "nas.openheadunit.aap.protocol.proto.Navi" +
+      "gationDistance.DistanceUnits\"\207\001\n\rDistanc" +
+      "eUnits\022\031\n\025UNKNOWN_DISTANCE_UNIT\020\000\022\n\n\006MET" +
+      "ERS\020\001\022\016\n\nKILOMETERS\020\002\022\021\n\rKILOMETERS_P1\020\003" +
+      "\022\t\n\005MILES\020\004\022\014\n\010MILES_P1\020\005\022\010\n\004FEET\020\006\022\t\n\005Y" +
+      "ARDS\020\007*\213\002\n\007MsgType\022\036\n\030INSTRUMENT_CLUSTER" +
+      "_START\020\201\200\002\022\035\n\027INSTRUMENT_CLUSTER_STOP\020\202\200" +
+      "\002\022*\n$INSTRUMENT_CLUSTER_NAVIGATION_STATU" +
+      "S\020\203\200\002\022\025\n\017NEXTTURNDETAILS\020\204\200\002\022\035\n\027NEXTTURN" +
+      "DISTANCEANDTIME\020\205\200\002\022)\n#INSTRUMENT_CLUSTE" +
+      "R_NAVIGATION_STATE\020\206\200\002\0224\n.INSTRUMENT_CLU" +
+      "STER_NAVIGATION_CURRENT_POSITION\020\207\200\002B\022B\020" +
+      "NavigationStatus"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15060,21 +15727,27 @@ public final class NavigationStatus {
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStep_descriptor,
-        new java.lang.String[] { "Maneuver", "Road", "Lanes", "Cue", });
+        new java.lang.String[] { "Maneuver", "Instruction", "Lanes", "RoadInfo", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationManeuver_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationManeuver_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationManeuver_descriptor,
         new java.lang.String[] { "Type", "RoundaboutExitNumber", "RoundaboutExitAngle", });
-    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_descriptor =
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_fieldAccessorTable = new
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCue_descriptor,
-        new java.lang.String[] { "AlternateText", });
-    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_descriptor =
+        internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationText_descriptor,
+        new java.lang.String[] { "Text", });
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoadInfo_descriptor,
+        new java.lang.String[] { "RoadNames", });
+    internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_descriptor,
@@ -15086,37 +15759,37 @@ public final class NavigationStatus {
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationLane_LaneDirection_descriptor,
         new java.lang.String[] { "Shape", "IsHighlighted", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestination_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestination_descriptor,
         new java.lang.String[] { "Address", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCurrentPosition_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCurrentPosition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationCurrentPosition_descriptor,
         new java.lang.String[] { "StepDistance", "DestinationDistances", "CurrentRoad", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStepDistance_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStepDistance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationStepDistance_descriptor,
         new java.lang.String[] { "Distance", "TimeToStepSeconds", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestinationDistance_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestinationDistance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDestinationDistance_descriptor,
         new java.lang.String[] { "Distance", "EstimatedTimeAtArrival", "TimeToArrivalSeconds", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoad_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoad_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationRoad_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDistance_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDistance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_andrerinas_openheadunit_aap_protocol_proto_NavigationDistance_descriptor,

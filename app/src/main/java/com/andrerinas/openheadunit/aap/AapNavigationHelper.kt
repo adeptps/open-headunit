@@ -26,15 +26,16 @@ class AapNavigationHelper(
     data class NavigationSnapshot(
         var clusterStatus: TimedMessage<NavigationStatus.NavigationClusterStatus>? = null,
         @Deprecated(
-            message = "This message may be not send by device",
+            message = "Legacy 0x8004 layout may not be sent by the device",
             level = DeprecationLevel.WARNING
         )
         var nextTurnDetail: TimedMessage<NavigationStatus.NextTurnDetail>? = null,
         @Deprecated(
-            message = "This message may be not send by device",
+            message = "0x8005 has incompatible field meanings across observed AA versions; do not consume without a wire capture",
             level = DeprecationLevel.WARNING
         )
         var nextTurnDistance: TimedMessage<NavigationStatus.NextTurnDistanceEvent>? = null,
+        var modernTurn: TimedMessage<AapModernNavigationTurn>? = null,
         var navigationState: TimedMessage<NavigationStatus.NavigationState>? = null,
         var currentPosition: TimedMessage<NavigationStatus.NavigationCurrentPosition>? = null,
         var currentStreet: TimedMessage<String>? = null
@@ -79,7 +80,9 @@ class AapNavigationHelper(
             turnAngle = prepared.turnAngle,
             totalDistanceMeters = prepared.totalDistanceMeters,
             totalTimeSeconds = prepared.totalTimeSeconds,
-            estimatedArrival = prepared.estimatedArrival
+            estimatedArrival = prepared.estimatedArrival,
+            maneuverType = prepared.nextManeuver,
+            navigationEventType = navEventType
         )
         context.applicationContext.sendBroadcast(intent, NavigationUpdateIntent.BROADCAST_PERMISSION)
     }
@@ -96,7 +99,14 @@ class AapNavigationHelper(
             ?.maneuver
             ?.type
             ?.let { maneuverTypeToAction(it) }
-        val action = actionFromDetail ?: actionFromState ?: context.getString(R.string.nav_action_unknown)
+        val actionFromFlatTurn = snapshot.modernTurn
+            ?.payload
+            ?.maneuverType
+            ?.let(::maneuverTypeToAction)
+        val action = actionFromDetail
+            ?: actionFromState
+            ?: actionFromFlatTurn
+            ?: context.getString(R.string.nav_action_unknown)
 
         val roadFromPosition = currentPosition
             ?.takeIf { it.hasCurrentRoad() && it.currentRoad.hasName() }
@@ -104,10 +114,10 @@ class AapNavigationHelper(
             ?.name
             ?.takeIf { it.isNotBlank() }
         val roadFromState = state?.stepsList?.firstOrNull()
-            ?.takeIf { it.hasRoad() && it.road.hasName() }
-            ?.road
-            ?.name
-            ?.takeIf { it.isNotBlank() }
+            ?.takeIf { it.hasRoadInfo() }
+            ?.roadInfo
+            ?.roadNamesList
+            ?.firstNotNullOfOrNull { name -> name.takeIf { it.isNotBlank() } }
         val street = (
             roadFromPosition
                 ?: snapshot.currentStreet?.payload?.takeIf { it.isNotBlank() }
@@ -127,7 +137,7 @@ class AapNavigationHelper(
     @Suppress("DEPRECATION") // Localized use of deprecated legacy mapping until broadcast API drops NextTurnDetail fields
     private fun prepareFullNavigationMessage(snapshot: NavigationSnapshot, navEventType: Int): FullNavigationMessage {
         val detail = snapshot.nextTurnDetail?.payload
-        val turnDistance = snapshot.nextTurnDistance?.payload
+        val modernTurn = snapshot.modernTurn?.payload
         val state = snapshot.navigationState?.payload
         val currentPosition = snapshot.currentPosition?.payload
 
@@ -136,14 +146,13 @@ class AapNavigationHelper(
             ?.takeIf { it.hasDistance() && it.distance.hasMeters() }
             ?.distance
             ?.meters
-            ?: turnDistance?.distanceMeters?.takeIf { it >= 0 }
+            ?: modernTurn?.distanceMeters
         val timeSeconds = stepDistance
             ?.takeIf { it.hasTimeToStepSeconds() }
             ?.timeToStepSeconds
             ?.coerceAtLeast(0L)
             ?.coerceAtMost(Int.MAX_VALUE.toLong())
             ?.toInt()
-            ?: turnDistance?.timeToTurnSeconds?.takeIf { it >= 0 }
 
         val roadFromPosition = currentPosition
             ?.takeIf { it.hasCurrentRoad() && it.currentRoad.hasName() }
@@ -151,13 +160,14 @@ class AapNavigationHelper(
             ?.name
             ?.takeIf { it.isNotBlank() }
         val roadFromState = state?.stepsList?.firstOrNull()
-            ?.takeIf { it.hasRoad() && it.road.hasName() }
-            ?.road
-            ?.name
-            ?.takeIf { it.isNotBlank() }
+            ?.takeIf { it.hasRoadInfo() }
+            ?.roadInfo
+            ?.roadNamesList
+            ?.firstNotNullOfOrNull { name -> name.takeIf { it.isNotBlank() } }
         val road = (roadFromPosition
             ?: snapshot.currentStreet?.payload?.takeIf { it.isNotBlank() }
             ?: roadFromState
+            ?: modernTurn?.roadName?.takeIf { it.isNotBlank() }
             ?: detail?.road?.takeIf { it.isNotBlank() }
             ?: "").ifBlank { "—" }
 
@@ -169,20 +179,28 @@ class AapNavigationHelper(
 
         val nextEventType = detail?.takeIf { it.hasNextTurn() }?.nextTurn?.number
             ?: (maneuverType?.let { maneuverTypeToLegacyNextEvent(it) }
+                ?: modernTurn?.maneuverType?.let(::maneuverTypeToLegacyNextEvent)
                 ?: LegacyNextEvent.UNKNOWN.number)
         val turnSide = detail
             ?.takeIf { it.hasSide() }
             ?.side
             ?.number
             ?: maneuverType?.let { maneuverTypeToLegacyTurnSide(it) }
-        val nextManeuver = state?.stepsList?.firstOrNull()?.maneuver?.type?.number
+            ?: modernTurn?.maneuverType?.let(::maneuverTypeToLegacyTurnSide)
+        val nextManeuver = state?.stepsList?.firstOrNull()
+            ?.takeIf { it.hasManeuver() && it.maneuver.hasType() }
+            ?.maneuver
+            ?.type
+            ?.number
+            ?: modernTurn?.maneuverType
         val turnNumber = state?.stepsList?.firstOrNull()?.maneuver?.roundaboutExitNumber
             ?: detail?.takeIf { it.hasTurnNumber() }?.turnNumber
         val turnAngle = state?.stepsList?.firstOrNull()?.maneuver?.roundaboutExitAngle
             ?: detail?.takeIf { it.hasTurnAngle() }?.turnAngle
-val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuverTypeToAction(it) }
-    ?: detail?.takeIf { it.hasNextTurn() }?.let { nextEventToAction(it.nextTurn) }
-    ?: context.getString(R.string.nav_action_unknown)
+        val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuverTypeToAction(it) }
+            ?: detail?.takeIf { it.hasNextTurn() }?.let { nextEventToAction(it.nextTurn) }
+            ?: modernTurn?.maneuverType?.let(::maneuverTypeToAction)
+            ?: context.getString(R.string.nav_action_unknown)
 
         val destFirst = currentPosition?.destinationDistancesList?.firstOrNull()
         val totalDistanceMeters = destFirst
@@ -203,7 +221,6 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             "Nav: emit debounced eventType=$navEventType " +
                 "statusAt=${snapshot.clusterStatus?.updatedAtElapsedRealtimeMs} " +
                 "turnAt=${snapshot.nextTurnDetail?.updatedAtElapsedRealtimeMs} " +
-                "distanceAt=${snapshot.nextTurnDistance?.updatedAtElapsedRealtimeMs} " +
                 "stateAt=${snapshot.navigationState?.updatedAtElapsedRealtimeMs} " +
                 "positionAt=${snapshot.currentPosition?.updatedAtElapsedRealtimeMs}"
         )
@@ -317,22 +334,38 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             NavigationStatus.NavigationManeuver.NavigationType.MERGE_LEFT,
             NavigationStatus.NavigationManeuver.NavigationType.MERGE_RIGHT,
             NavigationStatus.NavigationManeuver.NavigationType.MERGE_SIDE_UNSPECIFIED -> LegacyNextEvent.MERGE.number
-            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER -> LegacyNextEvent.ROUNDABOUT_ENTER.number
-            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT -> LegacyNextEvent.ROUNDABOUT_EXIT.number
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_CW,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_CCW ->
+                LegacyNextEvent.ROUNDABOUT_ENTER.number
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT_CW,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT_CCW ->
+                LegacyNextEvent.ROUNDABOUT_EXIT.number
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CW,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CW_WITH_ANGLE,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CCW,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CCW_WITH_ANGLE ->
                 LegacyNextEvent.ROUNDABOUT_ENTER_AND_EXIT.number
             NavigationStatus.NavigationManeuver.NavigationType.STRAIGHT -> LegacyNextEvent.STRAIGHT.number
-            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT -> LegacyNextEvent.FERRY_BOAT.number
-            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN -> LegacyNextEvent.FERRY_TRAIN.number
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT_LEFT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT_RIGHT -> LegacyNextEvent.FERRY_BOAT.number
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN_LEFT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN_RIGHT -> LegacyNextEvent.FERRY_TRAIN.number
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION,
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_STRAIGHT,
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_LEFT,
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_RIGHT -> LegacyNextEvent.DESTINATION.number
         }
     }
+
+    @Suppress("DEPRECATION")
+    private fun maneuverTypeToLegacyNextEvent(type: Int): Int =
+        NavigationStatus.NavigationManeuver.NavigationType.forNumber(type)
+            ?.let(::maneuverTypeToLegacyNextEvent)
+            ?: LegacyNextEvent.UNKNOWN.number
 
     /**
      * Maps [NavigationManeuver.NavigationType] to legacy [NextTurnDetail.Side] (1=LEFT, 2=RIGHT).
@@ -359,7 +392,9 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             NavigationStatus.NavigationManeuver.NavigationType.OFF_RAMP_NORMAL_LEFT,
             NavigationStatus.NavigationManeuver.NavigationType.FORK_LEFT,
             NavigationStatus.NavigationManeuver.NavigationType.MERGE_LEFT,
-            NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_LEFT -> LegacySide.LEFT.number
+            NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_LEFT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT_LEFT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN_LEFT -> LegacySide.LEFT.number
 
             NavigationStatus.NavigationManeuver.NavigationType.KEEP_RIGHT,
             NavigationStatus.NavigationManeuver.NavigationType.TURN_SLIGHT_RIGHT,
@@ -374,11 +409,18 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             NavigationStatus.NavigationManeuver.NavigationType.OFF_RAMP_NORMAL_RIGHT,
             NavigationStatus.NavigationManeuver.NavigationType.FORK_RIGHT,
             NavigationStatus.NavigationManeuver.NavigationType.MERGE_RIGHT,
-            NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_RIGHT -> LegacySide.RIGHT.number
+            NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_RIGHT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT_RIGHT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN_RIGHT -> LegacySide.RIGHT.number
 
             else -> null
         }
     }
+
+    @Suppress("DEPRECATION")
+    private fun maneuverTypeToLegacyTurnSide(type: Int): Int? =
+        NavigationStatus.NavigationManeuver.NavigationType.forNumber(type)
+            ?.let(::maneuverTypeToLegacyTurnSide)
 
     private fun maneuverTypeToAction(type: NavigationStatus.NavigationManeuver.NavigationType): String {
         return when (type) {
@@ -413,13 +455,21 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             NavigationStatus.NavigationManeuver.NavigationType.MERGE_SIDE_UNSPECIFIED -> context.getString(R.string.nav_action_turn)
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_CW,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT_CW,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_CCW,
+            NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_EXIT_CCW,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CW,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CW_WITH_ANGLE,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CCW,
             NavigationStatus.NavigationManeuver.NavigationType.ROUNDABOUT_ENTER_AND_EXIT_CCW_WITH_ANGLE -> context.getString(R.string.nav_action_roundabout)
             NavigationStatus.NavigationManeuver.NavigationType.STRAIGHT -> context.getString(R.string.nav_action_straight)
-            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT -> context.getString(R.string.nav_action_ferry)
-            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN -> context.getString(R.string.nav_action_ferry_train)
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT_LEFT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_BOAT_RIGHT -> context.getString(R.string.nav_action_ferry)
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN_LEFT,
+            NavigationStatus.NavigationManeuver.NavigationType.FERRY_TRAIN_RIGHT -> context.getString(R.string.nav_action_ferry_train)
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION,
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_STRAIGHT,
             NavigationStatus.NavigationManeuver.NavigationType.DESTINATION_LEFT,
@@ -427,6 +477,17 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             NavigationStatus.NavigationManeuver.NavigationType.UNKNOWN -> context.getString(R.string.nav_action_unknown)
         }
     }
+
+    private fun maneuverTypeToAction(type: Int): String =
+        when (AapMviteNavigationMapper.maneuverSign(type)) {
+            "forward" -> context.getString(R.string.nav_action_straight)
+            "in_circular_movement",
+            "out_circular_movement" -> context.getString(R.string.nav_action_roundabout)
+            "boardferry" -> context.getString(R.string.nav_action_ferry)
+            "finish" -> context.getString(R.string.nav_action_destination)
+            null -> context.getString(R.string.nav_action_unknown)
+            else -> context.getString(R.string.nav_action_turn)
+        }
 
     companion object {
         const val NAV_CHANNEL_ID = "headunit_navigation"

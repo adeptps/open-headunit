@@ -7,6 +7,7 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.IntentFilter
 import android.view.KeyEvent
 import com.andrerinas.openheadunit.aap.AapProjectionActivity
+import com.andrerinas.openheadunit.aap.AapMviteNavigationEmitter
 import com.andrerinas.openheadunit.aap.protocol.messages.LocationUpdateEvent
 import com.andrerinas.openheadunit.connection.CommManager
 import com.andrerinas.openheadunit.contract.KeyIntent
@@ -40,6 +41,10 @@ class AapBroadcastReceiver : BroadcastReceiver() {
 
             // Feed the single source of truth for geofence / night-by-area evaluation.
             com.andrerinas.openheadunit.location.LocationHolder.update(location)
+
+            if (location.hasSpeed()) {
+                AapMviteNavigationEmitter.emitSpeed(context, location.speed)
+            }
 
             if (component.settings.useGpsForNavigation) {
                 component.commManager.send(LocationUpdateEvent(location))
