@@ -26,15 +26,16 @@ class AapNavigationHelper(
     data class NavigationSnapshot(
         var clusterStatus: TimedMessage<NavigationStatus.NavigationClusterStatus>? = null,
         @Deprecated(
-            message = "This message may be not send by device",
+            message = "Legacy 0x8004 layout may not be sent by the device",
             level = DeprecationLevel.WARNING
         )
         var nextTurnDetail: TimedMessage<NavigationStatus.NextTurnDetail>? = null,
         @Deprecated(
-            message = "This message may be not send by device",
+            message = "Legacy flat distance message; prefer 0x8007 when it is available",
             level = DeprecationLevel.WARNING
         )
         var nextTurnDistance: TimedMessage<NavigationStatus.NextTurnDistanceEvent>? = null,
+        var modernTurn: TimedMessage<AapModernNavigationTurn>? = null,
         var navigationState: TimedMessage<NavigationStatus.NavigationState>? = null,
         var currentPosition: TimedMessage<NavigationStatus.NavigationCurrentPosition>? = null,
         var currentStreet: TimedMessage<String>? = null
@@ -79,7 +80,9 @@ class AapNavigationHelper(
             turnAngle = prepared.turnAngle,
             totalDistanceMeters = prepared.totalDistanceMeters,
             totalTimeSeconds = prepared.totalTimeSeconds,
-            estimatedArrival = prepared.estimatedArrival
+            estimatedArrival = prepared.estimatedArrival,
+            maneuverType = prepared.nextManeuver,
+            navigationEventType = navEventType
         )
         context.applicationContext.sendBroadcast(intent, NavigationUpdateIntent.BROADCAST_PERMISSION)
     }
@@ -96,7 +99,14 @@ class AapNavigationHelper(
             ?.maneuver
             ?.type
             ?.let { maneuverTypeToAction(it) }
-        val action = actionFromDetail ?: actionFromState ?: context.getString(R.string.nav_action_unknown)
+        val actionFromFlatTurn = snapshot.modernTurn
+            ?.payload
+            ?.maneuverType
+            ?.let(::maneuverTypeToAction)
+        val action = actionFromDetail
+            ?: actionFromState
+            ?: actionFromFlatTurn
+            ?: context.getString(R.string.nav_action_unknown)
 
         val roadFromPosition = currentPosition
             ?.takeIf { it.hasCurrentRoad() && it.currentRoad.hasName() }
@@ -127,6 +137,7 @@ class AapNavigationHelper(
     @Suppress("DEPRECATION") // Localized use of deprecated legacy mapping until broadcast API drops NextTurnDetail fields
     private fun prepareFullNavigationMessage(snapshot: NavigationSnapshot, navEventType: Int): FullNavigationMessage {
         val detail = snapshot.nextTurnDetail?.payload
+        val modernTurn = snapshot.modernTurn?.payload
         val turnDistance = snapshot.nextTurnDistance?.payload
         val state = snapshot.navigationState?.payload
         val currentPosition = snapshot.currentPosition?.payload
@@ -136,14 +147,15 @@ class AapNavigationHelper(
             ?.takeIf { it.hasDistance() && it.distance.hasMeters() }
             ?.distance
             ?.meters
-            ?: turnDistance?.distanceMeters?.takeIf { it >= 0 }
+            ?: modernTurn?.distanceMeters
+            ?: turnDistance?.let(::validatedTurnDistanceMeters)
         val timeSeconds = stepDistance
             ?.takeIf { it.hasTimeToStepSeconds() }
             ?.timeToStepSeconds
             ?.coerceAtLeast(0L)
             ?.coerceAtMost(Int.MAX_VALUE.toLong())
             ?.toInt()
-            ?: turnDistance?.timeToTurnSeconds?.takeIf { it >= 0 }
+            ?: turnDistance?.let(::validatedTurnTimeSeconds)
 
         val roadFromPosition = currentPosition
             ?.takeIf { it.hasCurrentRoad() && it.currentRoad.hasName() }
@@ -158,31 +170,53 @@ class AapNavigationHelper(
         val road = (roadFromPosition
             ?: snapshot.currentStreet?.payload?.takeIf { it.isNotBlank() }
             ?: roadFromState
+            ?: modernTurn?.roadName?.takeIf { it.isNotBlank() }
             ?: detail?.road?.takeIf { it.isNotBlank() }
             ?: "").ifBlank { "—" }
 
-        val maneuverType = state?.stepsList?.firstOrNull()
+        val stateManeuver = state?.stepsList?.firstOrNull()
             ?.takeIf { it.hasManeuver() }
             ?.maneuver
-            ?.takeIf { it.hasType() }
-            ?.type
+        val maneuverType = stateManeuver?.takeIf { it.hasType() }?.type
 
         val nextEventType = detail?.takeIf { it.hasNextTurn() }?.nextTurn?.number
             ?: (maneuverType?.let { maneuverTypeToLegacyNextEvent(it) }
+                ?: modernTurn?.maneuverType?.let(::maneuverTypeToLegacyNextEvent)
                 ?: LegacyNextEvent.UNKNOWN.number)
         val turnSide = detail
             ?.takeIf { it.hasSide() }
             ?.side
             ?.number
             ?: maneuverType?.let { maneuverTypeToLegacyTurnSide(it) }
-        val nextManeuver = state?.stepsList?.firstOrNull()?.maneuver?.type?.number
-        val turnNumber = state?.stepsList?.firstOrNull()?.maneuver?.roundaboutExitNumber
-            ?: detail?.takeIf { it.hasTurnNumber() }?.turnNumber
-        val turnAngle = state?.stepsList?.firstOrNull()?.maneuver?.roundaboutExitAngle
-            ?: detail?.takeIf { it.hasTurnAngle() }?.turnAngle
-val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuverTypeToAction(it) }
-    ?: detail?.takeIf { it.hasNextTurn() }?.let { nextEventToAction(it.nextTurn) }
-    ?: context.getString(R.string.nav_action_unknown)
+            ?: modernTurn?.maneuverType?.let(::maneuverTypeToLegacyTurnSide)
+        val nextManeuver = maneuverType?.number
+            ?: modernTurn?.maneuverType
+        val turnNumber = when {
+            maneuverType != null -> stateManeuver
+                ?.takeIf { AapMviteNavigationMapper.isRoundaboutManeuver(maneuverType.number) && it.hasRoundaboutExitNumber() }
+                ?.roundaboutExitNumber
+                ?.takeIf { it > 0 }
+            detail?.let { it.hasNextTurn() && isLegacyRoundabout(it.nextTurn) } == true -> detail
+                .takeIf { it.hasTurnNumber() }
+                ?.turnNumber
+                ?.takeIf { it > 0 }
+            else -> null
+        }
+        val turnAngle = when {
+            maneuverType != null -> stateManeuver
+                ?.takeIf { AapMviteNavigationMapper.isRoundaboutManeuver(maneuverType.number) && it.hasRoundaboutExitAngle() }
+                ?.roundaboutExitAngle
+                ?.takeIf { it >= 0 }
+            detail?.let { it.hasNextTurn() && isLegacyRoundabout(it.nextTurn) } == true -> detail
+                .takeIf { it.hasTurnAngle() }
+                ?.turnAngle
+                ?.takeIf { it >= 0 }
+            else -> null
+        }
+        val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuverTypeToAction(it) }
+            ?: detail?.takeIf { it.hasNextTurn() }?.let { nextEventToAction(it.nextTurn) }
+            ?: modernTurn?.maneuverType?.let(::maneuverTypeToAction)
+            ?: context.getString(R.string.nav_action_unknown)
 
         val destFirst = currentPosition?.destinationDistancesList?.firstOrNull()
         val totalDistanceMeters = destFirst
@@ -203,7 +237,6 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             "Nav: emit debounced eventType=$navEventType " +
                 "statusAt=${snapshot.clusterStatus?.updatedAtElapsedRealtimeMs} " +
                 "turnAt=${snapshot.nextTurnDetail?.updatedAtElapsedRealtimeMs} " +
-                "distanceAt=${snapshot.nextTurnDistance?.updatedAtElapsedRealtimeMs} " +
                 "stateAt=${snapshot.navigationState?.updatedAtElapsedRealtimeMs} " +
                 "positionAt=${snapshot.currentPosition?.updatedAtElapsedRealtimeMs}"
         )
@@ -334,6 +367,12 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
         }
     }
 
+    @Suppress("DEPRECATION")
+    private fun maneuverTypeToLegacyNextEvent(type: Int): Int =
+        NavigationStatus.NavigationManeuver.NavigationType.forNumber(type)
+            ?.let(::maneuverTypeToLegacyNextEvent)
+            ?: LegacyNextEvent.UNKNOWN.number
+
     /**
      * Maps [NavigationManeuver.NavigationType] to legacy [NextTurnDetail.Side] (1=LEFT, 2=RIGHT).
      * Returns null when side is not meaningful → [NavigationUpdateIntent] uses UNSPECIFIED (3).
@@ -379,6 +418,11 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
             else -> null
         }
     }
+
+    @Suppress("DEPRECATION")
+    private fun maneuverTypeToLegacyTurnSide(type: Int): Int? =
+        NavigationStatus.NavigationManeuver.NavigationType.forNumber(type)
+            ?.let(::maneuverTypeToLegacyTurnSide)
 
     private fun maneuverTypeToAction(type: NavigationStatus.NavigationManeuver.NavigationType): String {
         return when (type) {
@@ -428,9 +472,39 @@ val actionText = state?.stepsList?.firstOrNull()?.maneuver?.type?.let { maneuver
         }
     }
 
+    private fun maneuverTypeToAction(type: Int): String =
+        when (AapMviteNavigationMapper.maneuverSign(type)) {
+            "forward" -> context.getString(R.string.nav_action_straight)
+            "in_circular_movement",
+            "out_circular_movement" -> context.getString(R.string.nav_action_roundabout)
+            "boardferry" -> context.getString(R.string.nav_action_ferry)
+            "finish" -> context.getString(R.string.nav_action_destination)
+            null -> context.getString(R.string.nav_action_unknown)
+            else -> context.getString(R.string.nav_action_turn)
+        }
+
+    private fun isLegacyRoundabout(type: LegacyNextEvent): Boolean = when (type) {
+        LegacyNextEvent.ROUNDABOUT_ENTER,
+        LegacyNextEvent.ROUNDABOUT_EXIT,
+        LegacyNextEvent.ROUNDABOUT_ENTER_AND_EXIT -> true
+        else -> false
+    }
+
     companion object {
         const val NAV_CHANNEL_ID = "headunit_navigation"
         private const val NAV_NOTIFICATION_ID = 2
+        private const val MAX_TURN_DISTANCE_METERS = 10_000_000
+        private const val MAX_TURN_TIME_SECONDS = 7 * 24 * 60 * 60
+
+        internal fun validatedTurnDistanceMeters(event: NavigationStatus.NextTurnDistanceEvent): Int? =
+            event.takeIf {
+                it.hasDistanceMeters() && it.distanceMeters in 0..MAX_TURN_DISTANCE_METERS
+            }?.distanceMeters
+
+        internal fun validatedTurnTimeSeconds(event: NavigationStatus.NextTurnDistanceEvent): Int? =
+            event.takeIf {
+                it.hasTimeToTurnSeconds() && it.timeToTurnSeconds in 0..MAX_TURN_TIME_SECONDS
+            }?.timeToTurnSeconds
 
         fun createNotificationChannel(context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

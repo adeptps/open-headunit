@@ -1135,6 +1135,7 @@ class AapService : Service() {
                         }
                     }
                     is CommManager.ConnectionState.Disconnected -> {
+                        AapMviteNavigationEmitter.endSession(this@AapService)
                         if (hasEverConnected) {
                             emitSessionState(
                                 SessionStateIntent.STATE_DISCONNECTED,
@@ -2510,6 +2511,7 @@ class AapService : Service() {
         AppLog.i("AapService destroying... (wakeLock held=${bootWakeLock?.isHeld == true})")
         FloatingButtonManager.removeOverlay(this)
         isDestroying = true
+        AapMviteNavigationEmitter.endSession(this)
         // Nothing else clears it here, and the manager outlives the service instance.
         selfLauncherManager.isActive = false
         autoResumePlaybackJob?.cancel()

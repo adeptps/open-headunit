@@ -19,14 +19,27 @@ class AapNavigation(
     private val helper = AapNavigationHelper(context)
     private val snapshot = AapNavigationHelper.NavigationSnapshot()
     private val debounceHandler = Handler(Looper.getMainLooper())
+    private val mviteSessionToken = AapMviteNavigationEmitter.beginSession()
     private var isBroadcastScheduled = false
     private var pendingNavEventType = NAV_EVENT_TYPE_TURN
 
     private val debouncedBroadcastEmitter = Runnable {
-        isBroadcastScheduled = false
-        helper.sendFullNavigationBroadcast(snapshot, pendingNavEventType)
+        val pending = synchronized(this) {
+            if (!isBroadcastScheduled) return@Runnable
+            isBroadcastScheduled = false
+            snapshot.copy() to pendingNavEventType
+        }
+        AapMviteNavigationEmitter.runIfSessionActive(mviteSessionToken) {
+            helper.sendFullNavigationBroadcast(pending.first, pending.second)
+            AapMviteNavigationEmitter.emitSnapshot(
+                context = context,
+                snapshot = pending.first,
+                sessionToken = mviteSessionToken
+            )
+        }
     }
 
+    @Synchronized
     fun process(message: AapMessage): Boolean {
         if (message.channel != Channel.ID_NAV) return false
 
@@ -34,12 +47,24 @@ class AapNavigation(
             NavigationStatus.MsgType.INSTRUMENT_CLUSTER_START_VALUE -> {
                 AppLog.d("Nav: Instrument cluster start")
                 clearAccumulatedData()
+                AapMviteNavigationEmitter.emitSnapshot(
+                    context,
+                    snapshot,
+                    routeActiveOverride = true,
+                    sessionToken = mviteSessionToken
+                )
                 scheduleDebouncedBroadcast(NAV_EVENT_TYPE_START)
                 true
             }
             NavigationStatus.MsgType.INSTRUMENT_CLUSTER_STOP_VALUE -> {
                 AppLog.d("Nav: Instrument cluster stop")
                 clearAccumulatedData()
+                AapMviteNavigationEmitter.emitSnapshot(
+                    context,
+                    snapshot,
+                    routeActiveOverride = false,
+                    sessionToken = mviteSessionToken
+                )
                 scheduleDebouncedBroadcast(NAV_EVENT_TYPE_STOP)
                 helper.cancelNotification()
                 true
@@ -58,7 +83,44 @@ class AapNavigation(
             }
             NavigationStatus.MsgType.NEXTTURNDETAILS_VALUE -> {
                 try {
+                    val payload = message.data.copyOfRange(message.dataOffset, message.size)
+                    when (val decoded = AapModernNavigationTurnDecoder.classify(payload)) {
+                        is AapNavigationTurnDecodeResult.Corrected -> {
+                            val modernTurn = decoded.turn
+                            snapshot.nextTurnDetail = null
+                            snapshot.modernTurn = AapNavigationHelper.TimedMessage(
+                                modernTurn,
+                                helper.nowElapsedRealtimeMs()
+                            )
+                            modernTurn.roadName?.let {
+                                snapshot.currentStreet = AapNavigationHelper.TimedMessage(
+                                    it,
+                                    helper.nowElapsedRealtimeMs()
+                                )
+                            }
+                            AppLog.d(
+                                "Nav: corrected flat turn road=${modernTurn.roadName.orEmpty()} " +
+                                    "maneuver=${modernTurn.maneuverType ?: -1} " +
+                                    "distance=${modernTurn.distanceMeters ?: -1}"
+                            )
+                            scheduleDebouncedBroadcast(NAV_EVENT_TYPE_TURN)
+                            if (settings.showNavigationNotifications) {
+                                helper.showNotificationForSnapshot(snapshot, modernTurn.distanceMeters)
+                            }
+                            return true
+                        }
+                        AapNavigationTurnDecodeResult.Ambiguous -> {
+                            AppLog.d("Nav: ambiguous 0x8004 layout ignored pending rich NAV state")
+                            return true
+                        }
+                        AapNavigationTurnDecodeResult.Invalid -> {
+                            AppLog.d("Nav: invalid 0x8004 payload ignored")
+                            return true
+                        }
+                        AapNavigationTurnDecodeResult.Legacy -> Unit
+                    }
                     val detail = message.parse(NavigationStatus.NextTurnDetail.newBuilder()).buildPartial()
+                    snapshot.modernTurn = null
                     snapshot.nextTurnDetail = AapNavigationHelper.TimedMessage(detail, helper.nowElapsedRealtimeMs())
                     val road = detail.road.takeIf { it.isNotBlank() }
                     road?.let {
@@ -81,16 +143,20 @@ class AapNavigation(
             NavigationStatus.MsgType.NEXTTURNDISTANCEANDTIME_VALUE -> {
                 try {
                     val event = message.parse(NavigationStatus.NextTurnDistanceEvent.newBuilder()).buildPartial()
+                    val distanceMeters = AapNavigationHelper.validatedTurnDistanceMeters(event)
+                    val timeSeconds = AapNavigationHelper.validatedTurnTimeSeconds(event)
+                    if (distanceMeters == null && timeSeconds == null) {
+                        AppLog.d(
+                            "Nav: 0x8005 ignored: no sane distance/time " +
+                                "hasDistance=${event.hasDistanceMeters()} hasTime=${event.hasTimeToTurnSeconds()}"
+                        )
+                        return true
+                    }
                     snapshot.nextTurnDistance = AapNavigationHelper.TimedMessage(event, helper.nowElapsedRealtimeMs())
-                    val distanceMeters = event.distanceMeters.takeIf { it >= 0 }
-                    AppLog.d(
-                        "Nav: NextTurnDistanceEvent hasDistance=${event.hasDistanceMeters()} " +
-                                "distance=${event.distanceMeters} hasTime=${event.hasTimeToTurnSeconds()} " +
-                                "time=${event.timeToTurnSeconds}"
-                    )
+                    AppLog.d("Nav: 0x8005 distance=${distanceMeters ?: -1} time=${timeSeconds ?: -1}")
                     scheduleDebouncedBroadcast(NAV_EVENT_TYPE_TURN)
                     if (settings.showNavigationNotifications) {
-                        helper.showNotificationForSnapshot(snapshot, distanceMeters = distanceMeters)
+                        helper.showNotificationForSnapshot(snapshot, distanceMeters)
                     }
                     true
                 } catch (e: Exception) {
@@ -102,14 +168,11 @@ class AapNavigation(
                 try {
                     val state = message.parse(NavigationStatus.NavigationState.newBuilder()).build()
                     snapshot.navigationState = AapNavigationHelper.TimedMessage(state, helper.nowElapsedRealtimeMs())
-                    val firstStepRoad = state.stepsList.firstOrNull()
-                        ?.takeIf { it.hasRoad() && it.road.hasName() }
-                        ?.road
-                        ?.name
-                        ?.takeIf { it.isNotBlank() }
-                    if (!firstStepRoad.isNullOrBlank()) {
-                        snapshot.currentStreet = AapNavigationHelper.TimedMessage(firstStepRoad, helper.nowElapsedRealtimeMs())
-                    }
+                    AapMviteNavigationEmitter.emitSnapshot(
+                        context,
+                        snapshot,
+                        sessionToken = mviteSessionToken
+                    )
                     scheduleDebouncedBroadcast(NAV_EVENT_TYPE_STATE)
                     true
                 } catch (e: Exception) {
@@ -148,6 +211,7 @@ class AapNavigation(
         snapshot.clusterStatus = null
         snapshot.nextTurnDetail = null
         snapshot.nextTurnDistance = null
+        snapshot.modernTurn = null
         snapshot.navigationState = null
         snapshot.currentPosition = null
         snapshot.currentStreet = null

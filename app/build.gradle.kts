@@ -98,8 +98,8 @@ android {
         applicationId = "com.andrerinas.headunitrevived"
         minSdk = 16
         targetSdk = 36
-        versionCode = 109
-        versionName = "3.4.0"
+        versionCode = 110
+        versionName = "3.4.0-scs-mvite.2"
         setProperty("archivesBaseName", "${applicationId}_${versionName}")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
@@ -137,7 +137,12 @@ android {
             // keyPassword = property("HEADUNIT_KEYSTORE_PASSWORD") as String
         }
         create("release") {
-            val defaultStoreFile = when {
+            val envStorePath = System.getenv("HEADUNIT_KEYSTORE_FILE")?.takeIf { it.isNotBlank() }
+            val envStoreFile = envStorePath?.let { file(it) }
+            require(envStorePath == null || envStoreFile?.isFile == true) {
+                "HEADUNIT_KEYSTORE_FILE does not point to a keystore file"
+            }
+            val defaultStoreFile = envStoreFile ?: when {
                 rootProject.file("headunit-release-key.jks").exists() -> rootProject.file("headunit-release-key.jks")
                 file("../headunit-release-key.jks").exists() -> file("../headunit-release-key.jks")
                 else -> null
@@ -145,7 +150,7 @@ android {
             if (defaultStoreFile != null) {
                 storeFile = defaultStoreFile
             }
-            keyAlias = "headunit-revived"
+            keyAlias = System.getenv("HEADUNIT_KEY_ALIAS")?.takeIf { it.isNotBlank() } ?: "headunit-revived"
 
             val keyfile = rootProject.file("key.properties")
             val signingPropsFile = rootProject.file("secrets.properties")
